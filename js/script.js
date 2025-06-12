@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
-            header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.1)';
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
+            header.style.backgroundColor = 'rgba(18, 18, 18, 0.98)';
         } else {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+            header.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
         }
         
         lastScrollTop = scrollTop;
@@ -97,4 +97,37 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'scale(1)';
         });
     });
+    
+    // Add typing effect to hero section
+    const heroText = document.querySelector('.hero p');
+    if (heroText) {
+        const text = heroText.textContent;
+        heroText.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                heroText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        };
+        
+        // Start typing effect when the page loads
+        setTimeout(typeWriter, 1000);
+    }
+    
+    // Add glow effect to profile image
+    const profileImage = document.querySelector('.profile-image');
+    if (profileImage) {
+        window.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            profileImage.style.boxShadow = `
+                0 0 30px rgba(0, 183, 255, ${0.3 + x * 0.2}),
+                0 0 60px rgba(74, 222, 128, ${0.2 + y * 0.1})
+            `;
+        });
+    }
 });
