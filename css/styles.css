@@ -711,9 +711,18 @@ footer {
         flex: 1;
         min-width: 200px;
     }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
     .nav-links {
         position: fixed;
         top: 80px;
@@ -763,9 +772,26 @@ footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    
+    .skill-category {
+        padding: 20px;
+    }
+    
+    .skill-items {
+        gap: 8px;
+    }
+    
+    .skill-item {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
 }
 
 @media (max-width: 576px) {
+    section {
+        padding: 60px 0;
+    }
+    
     .cta-buttons {
         flex-direction: column;
         gap: 15px;
@@ -773,5 +799,76 @@ footer {
     
     .btn {
         width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .project-card {
+        margin-bottom: 20px;
+    }
+    
+    .project-content {
+        padding: 20px;
+    }
+    
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .contact-item {
+        padding: 15px;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .skill-category {
+        padding: 15px;
+    }
+    
+    .skill-item {
+        padding: 5px 10px;
+        font-size: 0.8rem;
     }
 }

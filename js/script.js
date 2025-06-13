@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
         item.addEventListener('click', function() {
-            if (hamburger.classList.contains('active')) {
+            if (hamburger && hamburger.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
             }
@@ -130,4 +130,22 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         });
     }
+    
+    // Fix for project cards on mobile
+    const adjustProjectCards = () => {
+        const projectCards = document.querySelectorAll('.project-card');
+        if (window.innerWidth <= 576) {
+            projectCards.forEach(card => {
+                card.style.height = 'auto';
+            });
+        } else {
+            projectCards.forEach(card => {
+                card.style.height = '100%';
+            });
+        }
+    };
+    
+    // Run on load and resize
+    adjustProjectCards();
+    window.addEventListener('resize', adjustProjectCards);
 });
