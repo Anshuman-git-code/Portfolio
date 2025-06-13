@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add typing effect to hero section
-    const heroText = document.querySelector('.hero p');
+    const heroText = document.querySelector('.hero-content p');
     if (heroText) {
         const text = heroText.textContent;
         heroText.textContent = '';
@@ -144,6 +144,28 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     };
+    
+    // Featured project cards hover effect
+    const featuredProjectCards = document.querySelectorAll('.featured-project-card');
+    featuredProjectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateX(5px)';
+            this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+            const link = this.querySelector('.featured-project-link');
+            if (link) {
+                link.style.color = 'var(--accent-color)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateX(0)';
+            this.style.boxShadow = 'none';
+            const link = this.querySelector('.featured-project-link');
+            if (link) {
+                link.style.color = 'var(--primary-color)';
+            }
+        });
+    });
     
     // Run on load and resize
     adjustProjectCards();
