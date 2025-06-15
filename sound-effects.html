@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple-Inspired Sound Effects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00b7ff;
+            --accent-color: #4ade80;
+            --bg-color: #121212;
+            --text-color: #e2e8f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .button.primary {
+            background-color: var(--primary-color);
+        }
+        
+        .button.primary:hover {
+            background-color: #0099e0;
+        }
+        
+        .description {
+            color: #999;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .sound-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sound-toggle:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .view-portfolio {
+            display: block;
+            margin: 40px auto;
+            width: 200px;
+            text-align: center;
+        }
+        
+        /* Demo navigation styling */
+        .demo-nav {
+            margin: 30px 0;
+        }
+        
+        .demo-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .demo-nav li {
+            margin: 0 15px;
+        }
+        
+        .nav-demo-item {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-demo-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-demo-item:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-demo-item:hover::after {
+            width: 100%;
+        }
+        
+        .menu-hint {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Apple-Inspired Sound Effects</h1>
+            <p class="subtitle">Subtle, elegant audio interactions for your portfolio</p>
+            
+            <!-- Added demo navigation menu -->
+            <nav class="demo-nav">
+                <ul>
+                    <li><a href="#" class="nav-demo-item">Home</a></li>
+                    <li><a href="#" class="nav-demo-item">About</a></li>
+                    <li><a href="#" class="nav-demo-item">Skills</a></li>
+                    <li><a href="#" class="nav-demo-item">Projects</a></li>
+                    <li><a href="#" class="nav-demo-item">Contact</a></li>
+                </ul>
+            </nav>
+            <p class="menu-hint">↑ Hover over these menu items to hear the sound effect ↑</p>
+        </header>
+        
+        <div class="card">
+            <h2>Header Menu Sounds</h2>
+            <p class="description">Apple-inspired subtle hover sounds for the navigation menu items. Try hovering over the menu items at the top of this page.</p>
+            <p class="description">Apple's approach: Providing consistent audio feedback across the interface with sounds that complement the visual design.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Click Sound</h2>
+            <p class="description">A subtle, satisfying click sound inspired by Apple's UI interactions. This sound plays when clicking on links, buttons, and interactive elements.</p>
+            <button class="button" id="clickTest">Test Click Sound</button>
+            <p class="description">Apple's approach: Subtle feedback that confirms an action without being distracting.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Hover Sound</h2>
+            <p class="description">An extremely subtle hover sound that plays occasionally when hovering over cards and interactive elements. Apple uses hover sounds very sparingly.</p>
+            <button class="button" id="hoverTest">Test Hover Sound</button>
+            <p class="description">Apple's approach: Almost imperceptible audio cues that enhance the experience without overwhelming it.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Submit Sound</h2>
+            <p class="description">A gentle confirmation sound that plays when submitting the contact form, similar to Apple's "task complete" sounds.</p>
+            <button class="button" id="submitTest">Test Submit Sound</button>
+            <p class="description">Apple's approach: Providing audio confirmation of important actions with a pleasant tone.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Sound Toggle</h2>
+            <p class="description">A minimalist sound toggle button appears in the bottom right corner after your first interaction with the page. The design is inspired by Apple's clean, simple controls.</p>
+            <p class="description">Apple's approach: Giving users control with unobtrusive UI elements that blend into the experience.</p>
+        </div>
+        
+        <a href="index.html" class="button primary view-portfolio">View Your Portfolio</a>
+        
+        <div class="footer">
+            <p>These sound effects are inspired by Apple's design philosophy: minimal, elegant, and enhancing the user experience without being intrusive.</p>
+        </div>
+    </div>
+    
+    <div class="sound-toggle" id="soundToggle">
+        <i class="fas fa-volume-up"></i>
+    </div>
+    
+    <script>
+        // Create audio objects
+        const clickSound = new Audio('audio/click.mp3');
+        const hoverSound = new Audio('audio/hover.mp3');
+        const submitSound = new Audio('audio/submit.mp3');
+        
+        // Preload sounds
+        clickSound.load();
+        hoverSound.load();
+        submitSound.load();
+        
+        // Set volume to be extremely subtle (Apple-like)
+        clickSound.volume = 0.1;
+        hoverSound.volume = 0.02; // Even more subtle hover sound
+        submitSound.volume = 0.15;
+        
+        // Test buttons
+        document.getElementById('clickTest').addEventListener('click', function() {
+            clickSound.currentTime = 0;
+            clickSound.play().catch(() => {});
+        });
+        
+        document.getElementById('hoverTest').addEventListener('click', function() {
+            hoverSound.currentTime = 0;
+            hoverSound.play().catch(() => {});
+        });
+        
+        document.getElementById('submitTest').addEventListener('click', function() {
+            submitSound.currentTime = 0;
+            submitSound.play().catch(() => {});
+        });
+        
+        // Sound toggle
+        let soundsEnabled = true;
+        const soundToggle = document.getElementById('soundToggle');
+        
+        soundToggle.addEventListener('click', function() {
+            soundsEnabled = !soundsEnabled;
+            
+            // Apple-like subtle animation
+            soundToggle.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                soundToggle.style.transform = 'scale(1)';
+            }, 100);
+            
+            // Update volume based on toggle state
+            clickSound.volume = soundsEnabled ? 0.1 : 0;
+            hoverSound.volume = soundsEnabled ? 0.02 : 0;
+            submitSound.volume = soundsEnabled ? 0.15 : 0;
+            
+            // Update icon
+            soundToggle.innerHTML = soundsEnabled ? 
+                '<i class="fas fa-volume-up"></i>' : 
+                '<i class="fas fa-volume-mute"></i>';
+        });
+        
+        // Add hover sounds to demo navigation items
+        document.querySelectorAll('.nav-demo-item').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', function() {
+                if (soundsEnabled) {
+                    hoverSound.currentTime = 0;
+                    hoverSound.play().catch(() => {});
+                }
+            });
+        });
+        
+        // Add hover sounds to cards with debouncing
+        let lastHoverTime = 0;
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const now = Date.now();
+                if (now - lastHoverTime > 300 && soundsEnabled) {
+                    lastHoverTime = now;
+                    hoverSound.currentTime = 0;
+                    hoverSound.play().catch(() => {});
+                }
+            });
+        });
+        
+        // Add click sounds to buttons
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (soundsEnabled && this.id !== 'clickTest' && this.id !== 'hoverTest' && this.id !== 'submitTest') {
+                    clickSound.currentTime = 0;
+                    clickSound.play().catch(() => {});
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -170,4 +170,99 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run on load and resize
     adjustProjectCards();
     window.addEventListener('resize', adjustProjectCards);
+    
+    // Apple-inspired sound effects
+    // Create audio objects with preloading
+    const clickSound = new Audio('audio/click.mp3');
+    const hoverSound = new Audio('audio/hover.mp3');
+    const submitSound = new Audio('audio/submit.mp3');
+    
+    // Preload sounds
+    clickSound.load();
+    hoverSound.load();
+    submitSound.load();
+    
+    // Set volume to be extremely subtle (Apple-like)
+    clickSound.volume = 0.1;
+    hoverSound.volume = 0.02; // Very subtle hover sound
+    submitSound.volume = 0.15;
+    
+    // Function to initialize sound effects after user interaction
+    function initSounds() {
+        // Add sound toggle button with Apple-inspired design
+        const soundToggle = document.createElement('div');
+        soundToggle.className = 'sound-toggle';
+        soundToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+        soundToggle.title = 'Toggle sound effects';
+        document.body.appendChild(soundToggle);
+        
+        // Track last hover time to prevent sound spam
+        let lastHoverTime = 0;
+        
+        // Add click sounds to interactive elements
+        document.querySelectorAll('a, button, .btn, .featured-project-link, .project-link').forEach(element => {
+            element.addEventListener('click', () => {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(() => {});
+            });
+        });
+        
+        // Add specific hover sounds to header menu items
+        document.querySelectorAll('.nav-links a').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                if (hoverSound.volume > 0) { // Check if sound is enabled
+                    hoverSound.currentTime = 0;
+                    hoverSound.play().catch(() => {});
+                }
+            });
+        });
+        
+        // Add hover sounds with debouncing (Apple uses hover sounds very sparingly)
+        document.querySelectorAll('.featured-project-card, .project-card, .btn, .skill-item').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                const now = Date.now();
+                if (now - lastHoverTime > 300) { // Only play if 300ms passed since last hover sound
+                    lastHoverTime = now;
+                    hoverSound.currentTime = 0;
+                    hoverSound.play().catch(() => {});
+                }
+            });
+        });
+        
+        // Add form submission sound
+        if (contactForm) {
+            contactForm.addEventListener('submit', () => {
+                submitSound.currentTime = 0;
+                submitSound.play().catch(() => {});
+            });
+        }
+        
+        // Sound toggle functionality
+        let soundsEnabled = true;
+        soundToggle.addEventListener('click', () => {
+            soundsEnabled = !soundsEnabled;
+            
+            // Apple-like subtle animation
+            soundToggle.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                soundToggle.style.transform = 'scale(1)';
+            }, 100);
+            
+            // Update volume based on toggle state
+            clickSound.volume = soundsEnabled ? 0.1 : 0;
+            hoverSound.volume = soundsEnabled ? 0.02 : 0;
+            submitSound.volume = soundsEnabled ? 0.15 : 0;
+            
+            // Update icon
+            soundToggle.innerHTML = soundsEnabled ? 
+                '<i class="fas fa-volume-up"></i>' : 
+                '<i class="fas fa-volume-mute"></i>';
+        });
+    }
+    
+    // Initialize sounds after first user interaction (to comply with autoplay policies)
+    document.addEventListener('click', function initOnFirstClick() {
+        initSounds();
+        document.removeEventListener('click', initOnFirstClick);
+    }, { once: true });
 });
