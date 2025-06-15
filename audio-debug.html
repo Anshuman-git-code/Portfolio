@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .log {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Audio Debug Page</h1>
+    <p>This page tests if audio files can be loaded and played on your GitHub Pages site.</p>
+    
+    <div class="test-section">
+        <h2>1. Test with Relative Paths</h2>
+        <button onclick="testRelativePath('./audio/click.mp3', 'relative-click')">Test Click Sound</button>
+        <button onclick="testRelativePath('./audio/hover.mp3', 'relative-hover')">Test Hover Sound</button>
+        <button onclick="testRelativePath('./audio/submit.mp3', 'relative-submit')">Test Submit Sound</button>
+        <div id="relative-log" class="log"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Test with Absolute Paths</h2>
+        <button onclick="testAbsolutePath('/Portfolio/audio/click.mp3', 'absolute-click')">Test Click Sound</button>
+        <button onclick="testAbsolutePath('/Portfolio/audio/hover.mp3', 'absolute-hover')">Test Hover Sound</button>
+        <button onclick="testAbsolutePath('/Portfolio/audio/submit.mp3', 'absolute-submit')">Test Submit Sound</button>
+        <div id="absolute-log" class="log"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Test with Full URLs</h2>
+        <button onclick="testFullURL('https://anshuman-git-code.github.io/Portfolio/audio/click.mp3', 'full-click')">Test Click Sound</button>
+        <button onclick="testFullURL('https://anshuman-git-code.github.io/Portfolio/audio/hover.mp3', 'full-hover')">Test Hover Sound</button>
+        <button onclick="testFullURL('https://anshuman-git-code.github.io/Portfolio/audio/submit.mp3', 'full-submit')">Test Submit Sound</button>
+        <div id="full-log" class="log"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Browser Information</h2>
+        <div id="browser-info" class="log"></div>
+    </div>
+    
+    <script>
+        // Log browser information
+        document.getElementById('browser-info').innerHTML = 
+            `<p>User Agent: ${navigator.userAgent}</p>
+             <p>Audio Context Support: ${window.AudioContext || window.webkitAudioContext ? 'Yes' : 'No'}</p>`;
+        
+        function log(elementId, message, isError = false) {
+            const logElement = document.getElementById(elementId);
+            const p = document.createElement('p');
+            p.textContent = message;
+            p.className = isError ? 'error' : 'success';
+            logElement.appendChild(p);
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+        
+        function testRelativePath(path, soundType) {
+            log('relative-log', `Testing ${soundType} with path: ${path}`);
+            
+            const audio = new Audio(path);
+            
+            audio.addEventListener('canplaythrough', () => {
+                log('relative-log', `${soundType}: Audio loaded successfully`);
+                audio.play()
+                    .then(() => log('relative-log', `${soundType}: Audio played successfully`))
+                    .catch(error => log('relative-log', `${soundType}: Error playing audio: ${error}`, true));
+            });
+            
+            audio.addEventListener('error', (e) => {
+                log('relative-log', `${soundType}: Error loading audio: ${e.target.error.code}`, true);
+            });
+            
+            audio.load();
+        }
+        
+        function testAbsolutePath(path, soundType) {
+            log('absolute-log', `Testing ${soundType} with path: ${path}`);
+            
+            const audio = new Audio(path);
+            
+            audio.addEventListener('canplaythrough', () => {
+                log('absolute-log', `${soundType}: Audio loaded successfully`);
+                audio.play()
+                    .then(() => log('absolute-log', `${soundType}: Audio played successfully`))
+                    .catch(error => log('absolute-log', `${soundType}: Error playing audio: ${error}`, true));
+            });
+            
+            audio.addEventListener('error', (e) => {
+                log('absolute-log', `${soundType}: Error loading audio: ${e.target.error.code}`, true);
+            });
+            
+            audio.load();
+        }
+        
+        function testFullURL(url, soundType) {
+            log('full-log', `Testing ${soundType} with URL: ${url}`);
+            
+            const audio = new Audio(url);
+            
+            audio.addEventListener('canplaythrough', () => {
+                log('full-log', `${soundType}: Audio loaded successfully`);
+                audio.play()
+                    .then(() => log('full-log', `${soundType}: Audio played successfully`))
+                    .catch(error => log('full-log', `${soundType}: Error playing audio: ${error}`, true));
+            });
+            
+            audio.addEventListener('error', (e) => {
+                log('full-log', `${soundType}: Error loading audio: ${e.target.error.code}`, true);
+            });
+            
+            audio.load();
+        }
+    </script>
+</body>
+</html>

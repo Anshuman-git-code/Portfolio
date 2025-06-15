@@ -173,9 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Apple-inspired sound effects
     // Create audio objects with preloading
-    const clickSound = new Audio('audio/click.mp3');
-    const hoverSound = new Audio('audio/hover.mp3');
-    const submitSound = new Audio('audio/submit.mp3');
+    const clickSound = new Audio('./audio/click.mp3');
+    const hoverSound = new Audio('./audio/hover.mp3');
+    const submitSound = new Audio('./audio/submit.mp3');
     
     // Preload sounds
     clickSound.load();
@@ -189,6 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to initialize sound effects after user interaction
     function initSounds() {
+        console.log("Sound system initialized");
+        
         // Add sound toggle button with Apple-inspired design
         const soundToggle = document.createElement('div');
         soundToggle.className = 'sound-toggle';
@@ -202,8 +204,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add click sounds to interactive elements
         document.querySelectorAll('a, button, .btn, .featured-project-link, .project-link').forEach(element => {
             element.addEventListener('click', () => {
+                console.log("Click sound playing");
                 clickSound.currentTime = 0;
-                clickSound.play().catch(() => {});
+                clickSound.play().catch(e => console.error("Error playing click sound:", e));
             });
         });
         
@@ -211,8 +214,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.nav-links a').forEach(menuItem => {
             menuItem.addEventListener('mouseenter', () => {
                 if (hoverSound.volume > 0) { // Check if sound is enabled
+                    console.log("Hover sound playing");
                     hoverSound.currentTime = 0;
-                    hoverSound.play().catch(() => {});
+                    hoverSound.play().catch(e => console.error("Error playing hover sound:", e));
                 }
             });
         });
@@ -223,8 +227,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const now = Date.now();
                 if (now - lastHoverTime > 300) { // Only play if 300ms passed since last hover sound
                     lastHoverTime = now;
+                    console.log("Hover sound playing (debounced)");
                     hoverSound.currentTime = 0;
-                    hoverSound.play().catch(() => {});
+                    hoverSound.play().catch(e => console.error("Error playing hover sound:", e));
                 }
             });
         });
@@ -232,8 +237,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add form submission sound
         if (contactForm) {
             contactForm.addEventListener('submit', () => {
+                console.log("Submit sound playing");
                 submitSound.currentTime = 0;
-                submitSound.play().catch(() => {});
+                submitSound.play().catch(e => console.error("Error playing submit sound:", e));
             });
         }
         
@@ -253,6 +259,8 @@ document.addEventListener('DOMContentLoaded', function() {
             hoverSound.volume = soundsEnabled ? 0.02 : 0;
             submitSound.volume = soundsEnabled ? 0.15 : 0;
             
+            console.log("Sound toggled:", soundsEnabled ? "ON" : "OFF");
+            
             // Update icon
             soundToggle.innerHTML = soundsEnabled ? 
                 '<i class="fas fa-volume-up"></i>' : 
@@ -262,6 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize sounds after first user interaction (to comply with autoplay policies)
     document.addEventListener('click', function initOnFirstClick() {
+        console.log("User clicked - initializing sounds");
         initSounds();
         document.removeEventListener('click', initOnFirstClick);
     }, { once: true });
