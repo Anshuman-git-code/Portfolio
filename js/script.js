@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
-            header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
-            header.style.backgroundColor = 'rgba(18, 18, 18, 0.98)';
+            header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 1)';
         } else {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-            header.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
+            header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
         }
         
         lastScrollTop = scrollTop;
@@ -171,107 +171,34 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustProjectCards();
     window.addEventListener('resize', adjustProjectCards);
     
-    // Apple-inspired sound effects
-    // Create audio objects with preloading
-    const clickSound = new Audio('./audio/click.mp3');
-    const hoverSound = new Audio('./audio/hover.mp3');
-    const submitSound = new Audio('./audio/submit.mp3');
+    // Sound effects removed for professional portfolio experience
     
-    // Preload sounds
-    clickSound.load();
-    hoverSound.load();
-    submitSound.load();
+    // Scroll to Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
     
-    // Set volume to be extremely subtle (Apple-like)
-    clickSound.volume = 0.1;
-    hoverSound.volume = 0.02; // Very subtle hover sound
-    submitSound.volume = 0.15;
-    
-    // Function to initialize sound effects after user interaction
-    function initSounds() {
-        console.log("Sound system initialized");
-        
-        // Add sound toggle button with Apple-inspired design
-        const soundToggle = document.createElement('div');
-        soundToggle.className = 'sound-toggle';
-        soundToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-        soundToggle.title = 'Toggle sound effects';
-        document.body.appendChild(soundToggle);
-        
-        // Track last hover time to prevent sound spam
-        let lastHoverTime = 0;
-        
-        // Add click sounds to interactive elements
-        document.querySelectorAll('a, button, .btn, .featured-project-link, .project-link').forEach(element => {
-            element.addEventListener('click', () => {
-                console.log("Click sound playing");
-                clickSound.currentTime = 0;
-                clickSound.play().catch(e => console.error("Error playing click sound:", e));
-            });
-        });
-        
-        // Add specific hover sounds to header menu items
-        document.querySelectorAll('.nav-links a').forEach(menuItem => {
-            menuItem.addEventListener('mouseenter', () => {
-                if (hoverSound.volume > 0) { // Check if sound is enabled
-                    console.log("Hover sound playing");
-                    hoverSound.currentTime = 0;
-                    hoverSound.play().catch(e => console.error("Error playing hover sound:", e));
-                }
-            });
-        });
-        
-        // Add hover sounds with debouncing (Apple uses hover sounds very sparingly)
-        document.querySelectorAll('.featured-project-card, .project-card, .btn, .skill-item').forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                const now = Date.now();
-                if (now - lastHoverTime > 300) { // Only play if 300ms passed since last hover sound
-                    lastHoverTime = now;
-                    console.log("Hover sound playing (debounced)");
-                    hoverSound.currentTime = 0;
-                    hoverSound.play().catch(e => console.error("Error playing hover sound:", e));
-                }
-            });
-        });
-        
-        // Add form submission sound
-        if (contactForm) {
-            contactForm.addEventListener('submit', () => {
-                console.log("Submit sound playing");
-                submitSound.currentTime = 0;
-                submitSound.play().catch(e => console.error("Error playing submit sound:", e));
-            });
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
         }
-        
-        // Sound toggle functionality
-        let soundsEnabled = true;
-        soundToggle.addEventListener('click', () => {
-            soundsEnabled = !soundsEnabled;
-            
-            // Apple-like subtle animation
-            soundToggle.style.transform = 'scale(0.9)';
-            setTimeout(() => {
-                soundToggle.style.transform = 'scale(1)';
-            }, 100);
-            
-            // Update volume based on toggle state
-            clickSound.volume = soundsEnabled ? 0.1 : 0;
-            hoverSound.volume = soundsEnabled ? 0.02 : 0;
-            submitSound.volume = soundsEnabled ? 0.15 : 0;
-            
-            console.log("Sound toggled:", soundsEnabled ? "ON" : "OFF");
-            
-            // Update icon
-            soundToggle.innerHTML = soundsEnabled ? 
-                '<i class="fas fa-volume-up"></i>' : 
-                '<i class="fas fa-volume-mute"></i>';
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Scroll Indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function() {
+            const experienceSection = document.getElementById('experience');
+            if (experienceSection) {
+                experienceSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
-    
-    // Initialize sounds after first user interaction (to comply with autoplay policies)
-    document.addEventListener('click', function initOnFirstClick() {
-        console.log("User clicked - initializing sounds");
-        initSounds();
-        document.removeEventListener('click', initOnFirstClick);
-    }, { once: true });
 });
