@@ -1,815 +1,954 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Cache bust: 2025-11-28 -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Anshuman Mohapatra | Cloud & DevOps Engineer</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anshuman Mohapatra — AWS Cloud Engineer</title>
+<meta name="description" content="Anshuman Mohapatra is an AWS Cloud Engineer who designs production-oriented serverless systems using Infrastructure as Code, event-driven architecture, and secure-by-default AWS design." />
+<meta name="author" content="Anshuman Mohapatra" />
+<link rel="canonical" href="https://anshuman-git-code.github.io/Portfolio/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Anshuman Mohapatra — AWS Cloud Engineer" />
+<meta property="og:description" content="Production-oriented AWS serverless systems, designed from business requirements down to Infrastructure as Code." />
+<meta property="og:url" content="https://anshuman-git-code.github.io/Portfolio/" />
+<meta property="og:image" content="assets/og-cover.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Anshuman Mohapatra — AWS Cloud Engineer" />
+<meta name="twitter:description" content="Production-oriented AWS serverless systems, designed from business requirements down to Infrastructure as Code." />
+<meta name="twitter:image" content="assets/og-cover.png" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%225%22 fill=%22%230a0a0b%22/><path d=%22M6 15l4-7 3 5 2-3 3 5%22 stroke=%22%23ff9900%22 stroke-width=%222%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Anshuman Mohapatra",
+  "jobTitle": "AWS Cloud Engineer",
+  "url": "https://anshuman-git-code.github.io/Portfolio/",
+  "sameAs": [
+    "https://github.com/Anshuman-git-code",
+    "https://www.linkedin.com/in/anshuman-mohapatra-a6b1b0325/"
+  ],
+  "alumniOf": "ITER, SOA University",
+  "knowsAbout": ["AWS", "Terraform", "Serverless Architecture", "DevOps", "Infrastructure as Code"]
+}
+</script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <span class="code-bracket">{</span>
-                    <span class="code-text">A</span>
-                    <span class="code-bracket">}</span>
-                </div>
-                <div class="nav-center">
-                    <span class="nav-experience">
-                        <i class="fas fa-briefcase"></i> AWS Cloud Engineer @ F13 Technologies
-                    </span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============================= ICON SPRITE ============================= -->
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.18.08 1.8 1.21 1.8 1.21 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.28 5.69.42.36.79 1.08.79 2.17v3.22c0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" d="M3 5h18v14H3z"/><path stroke="currentColor" stroke-width="1.6" d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M6 5H4v15h15v-2"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 12 4 7.5M12 12l8-4.5M12 12v9"/></symbol>
+    <symbol id="i-terraform" viewBox="0 0 24 24"><path fill="currentColor" d="M2 3.5 8.4 7v6.9L2 10.4V3.5ZM9.2 7.4l6.4-3.5v6.9l-6.4 3.5V7.4ZM16.4 3.9 22.8 7.4v6.9l-6.4-3.5V3.9ZM9.2 14.5l6.4 3.5V24l-6.4-3.5v-6Z"/></symbol>
+    <symbol id="i-automate" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0 1 14.9-4M20 12a8 8 0 0 1-14.9 4M15 4h4V0M9 20H5v4" transform="translate(0 0)"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+
+    <!-- AWS-style service glyphs (simplified line icons) -->
+    <symbol id="svc-lambda" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></symbol>
+    <symbol id="svc-apigw" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z"/></symbol>
+    <symbol id="svc-dynamodb" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="2.7" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" d="M4 5.5v13c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7v-13M4 12c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7"/></symbol>
+    <symbol id="svc-eventbridge" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.2" stroke="currentColor" stroke-width="1.5"/><circle cx="19" cy="6" r="2.2" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="18" r="2.2" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-width="1.5" d="M7 7 17 7M6.3 8 11 16M17.7 8 13 16"/></symbol>
+    <symbol id="svc-ses" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="m4 6.5 8 6.5 8-6.5"/></symbol>
+    <symbol id="svc-s3" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z"/><path stroke="currentColor" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2"/></symbol>
+    <symbol id="svc-cloudwatch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 8v4l3 2"/></symbol>
+    <symbol id="svc-iam" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M3.5 20c.6-3.6 3-5.6 5.5-5.6s4.9 2 5.5 5.6"/><circle cx="18" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M18 9v6"/></symbol>
+    <symbol id="svc-terraform" viewBox="0 0 24 24"><path fill="currentColor" d="M2 3.5 8.4 7v6.9L2 10.4V3.5ZM9.2 7.4l6.4-3.5v6.9l-6.4 3.5V7.4ZM16.4 3.9 22.8 7.4v6.9l-6.4-3.5V3.9ZM9.2 14.5l6.4 3.5V24l-6.4-3.5v-6Z"/></symbol>
+    <symbol id="svc-cloudfront" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.4" d="M3.5 12h17M12 3.5c2.5 2.3 2.5 15 0 17M12 3.5c-2.5 2.3-2.5 15 0 17"/></symbol>
+    <symbol id="svc-textract" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M6 3h9l4 4v14H6z"/><path stroke="currentColor" stroke-width="1.4" d="M9 12h7M9 15.5h7M9 8.5h3"/></symbol>
+    <symbol id="svc-cognito" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M5 20c.7-4 3.4-6.2 7-6.2S18.3 16 19 20"/></symbol>
+    <symbol id="svc-client" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.4" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============================= NAV ============================= -->
+<nav class="site-nav" id="siteNav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-logo"><span class="bracket">{</span>anshuman.cloud<span class="bracket">}</span></a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <div class="btn-row">
+        <a class="btn btn-sm" href="https://github.com/Anshuman-git-code" target="_blank" rel="noopener">
+          <svg><use href="#i-github"/></svg> GitHub
+        </a>
+        <a class="btn btn-sm btn-accent" href="assets/resume/AnshumanMohapatra-Resume.pdf" target="_blank" rel="noopener">
+          <svg><use href="#i-download"/></svg> Resume
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg id="navToggleIcon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#projects">Projects</a>
+  <a href="#philosophy">Philosophy</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#contact">Contact</a>
+  <div class="btn-row">
+    <a class="btn" href="https://github.com/Anshuman-git-code" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> GitHub</a>
+    <a class="btn btn-accent" href="assets/resume/AnshumanMohapatra-Resume.pdf" target="_blank" rel="noopener"><svg><use href="#i-download"/></svg> Resume</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============================= HERO ============================= -->
+<header class="hero" id="top">
+  <div class="container hero-inner">
+    <p class="hero-kicker"><span class="dot"></span> Open to Cloud Engineer roles · Remote &amp; India</p>
+    <h1>Anshuman Mohapatra</h1>
+    <p class="role-line"><span>Business-First Cloud Engineer</span> · AWS · Infrastructure as Code</p>
+    <p class="hero-desc">
+      I approach cloud engineering by starting with the business problem, not the AWS service catalog. Every system
+      I build moves through actors, capabilities and access patterns before architecture, service selection and
+      Infrastructure as Code — so what ships is something I can defend service-by-service, not just demo.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#projects">
+        <svg><use href="#i-arrow-right"/></svg> View Projects
+      </a>
+      <a class="btn btn-accent" href="assets/resume/AnshumanMohapatra-Resume.pdf" target="_blank" rel="noopener">
+        <svg><use href="#i-download"/></svg> Download Resume
+      </a>
+      <a class="btn" href="https://github.com/Anshuman-git-code" target="_blank" rel="noopener">
+        <svg><use href="#i-github"/></svg> GitHub
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/anshuman-mohapatra-a6b1b0325/" target="_blank" rel="noopener">
+        <svg><use href="#i-linkedin"/></svg> LinkedIn
+      </a>
+    </div>
+    <div class="tag-row" aria-label="Core technologies">
+      <span class="tag">AWS</span>
+      <span class="tag">Terraform</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Serverless</span>
+      <span class="tag">DevOps</span>
+      <span class="tag">Cloud Architecture</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= WHAT I BUILD ============================= -->
+<section id="build" aria-labelledby="build-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I Build</span>
+      <h2 id="build-heading">Production systems, not demos</h2>
+      <p>
+        I focus on designing production-inspired cloud systems rather than simply writing code. Every project begins
+        with the business requirement, followed by architecture design, AWS service selection, Infrastructure as Code,
+        and production-oriented implementation.
+      </p>
+    </div>
+    <div class="build-grid">
+      <div class="build-card reveal">
+        <div class="build-icon"><svg><use href="#i-automate"/></svg></div>
+        <h3>Production Serverless Systems</h3>
+        <p>Event-driven backends that scale to zero and to spikes without manual intervention or idle compute cost.</p>
+      </div>
+      <div class="build-card reveal">
+        <div class="build-icon"><svg><use href="#i-terraform"/></svg></div>
+        <h3>Infrastructure as Code</h3>
+        <p>Every resource defined, versioned and reproducible through Terraform — never provisioned by hand.</p>
+      </div>
+      <div class="build-card reveal">
+        <div class="build-icon"><svg><use href="#i-cube"/></svg></div>
+        <h3>Cloud Automation</h3>
+        <p>CI/CD pipelines and event-driven workflows that remove manual operational steps from the system.</p>
+      </div>
+      <div class="build-card reveal">
+        <div class="build-icon"><svg><use href="#i-lock"/></svg></div>
+        <h3>Secure AWS Architectures</h3>
+        <p>Least-privilege IAM, private storage by default, and pre-signed access instead of public exposure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FEATURED PROJECTS ============================= -->
+<section id="projects" aria-labelledby="projects-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Featured Projects</span>
+      <h2 id="projects-heading">Engineering case studies</h2>
+      <p>
+        Four production-oriented serverless systems. Each one started as a business problem, not an AWS service list —
+        expand any section below to see the architecture, the reasoning behind it, and the security model.
+      </p>
+    </div>
+
+    <!-- PROJECT 1: EVENT TICKETING -->
+    <article class="project reveal">
+      <div class="project-top">
+        <div class="project-tag-row">
+          <span class="project-number">01 / 04</span>
+          <span class="project-tag">Production-Oriented Architecture</span>
         </div>
-    </header>
+        <h3>Production Serverless Event Ticketing Platform</h3>
+        <p class="project-problem">
+          <strong>Business problem —</strong> modern event platforms must support registration, ticket generation and
+          email delivery while staying responsive under load. The objective was an event-driven serverless platform
+          that handles registration synchronously and everything downstream of it — ticket generation, delivery —
+          asynchronously, without making the attendee wait on either.
+        </p>
+      </div>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-layout">
-                <div class="hero-content">
-                    <div class="hero-badge">Available for Opportunities</div>
-                    <h1>Anshuman Mohapatra</h1>
-                    <h2>Cloud Engineer</h2>
-                    <p class="hero-description">Building scalable AWS serverless solutions and automating cloud-native deployments.</p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-rocket"></i></div>
-                            <div class="stat-number">85%</div>
-                            <div class="stat-label">Deployment Time Reduced</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-server"></i></div>
-                            <div class="stat-number">99.9%</div>
-                            <div class="stat-label">System Uptime</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-code"></i></div>
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Projects</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-award"></i></div>
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">AWS Certifications</div>
-                        </div>
-                    </div>
-                    
-                    <div class="scroll-indicator">
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    
-                    <div class="cta-buttons">
-                        <a href="assets/AnshumanMohapatra-Final.pdf" class="btn primary-btn btn-large" download>Download Resume</a>
-                        <a href="#contact" class="btn secondary-btn">Get in Touch</a>
-                    </div>
-                    
-                    <div class="hero-social">
-                        <a href="https://github.com/Anshuman-git-code" target="_blank" class="social-icon" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/anshuman-mohapatra-a6b1b0325" target="_blank" class="social-icon" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:anshuman.mohapatra04@gmail.com" class="social-icon" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="tel:+917978294262" class="social-icon" title="Phone">
-                            <i class="fas fa-phone"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-projects">
-                    <h3 class="featured-title">Featured Projects</h3>
-                    <div class="featured-projects">
-                        <div class="featured-project-card">
-                            <h4>AWS Event Ticketing System</h4>
-                            <p class="project-tech">AWS Lambda, S3, CloudFront, API Gateway, DynamoDB, Cognito, CloudFormation, Python, JavaScript</p>
-                            <p class="project-description-short">Built a production-grade, multi-region serverless SaaS platform on AWS with event-driven Lambda architecture, DynamoDB (10 GSIs for single-digit ms latency), secure Cognito authentication, and Infrastructure-as-Code enabling full deployment in 15 minutes at $13/month cost. Features & Performance: Implemented end-to-end event creation, registration, payments, digital ticketing with PDF generation, QR-based validation, fraud prevention, global CDN delivery, sub-second response times, and scalability for 1M+ users.</p>
-                            <a href="https://github.com/Anshuman-git-code/aws-event-ticketing-system.git" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                        <div class="featured-project-card">
-                            <h4>LinkForge Pro</h4>
-                            <p class="project-tech">AWS Lambda, S3, DynamoDB, IAM, API Gateway, CloudFormation, Python, JavaScript</p>
-                            <p class="project-description-short">A production-grade, serverless URL shortener built with AWS services. Features real-time analytics, custom short codes, QR code generation, and a comprehensive admin dashboard.
-                        </p>
-                            <a href="https://github.com/Anshuman-git-code/Linkforge_Pro.git" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                        <div class="featured-project-card">
-                            <h4>Image Optimization Pipeline</h4>
-                            <p class="project-tech">AWS Lambda, S3, API Gateway, Python, AWS IAM, AWS CloudWatch</p>
-                            <p class="project-description-short">This project provides an automated solution for image optimization, perfect for CMS systems, portfolios, blogs, and e-commerce platforms. Upload high-resolution images and receive optimized versions in multiple resolutions (1080p, 720p, 480p) with 90-98% file size reduction.</p>
-                            <a href="https://github.com/Anshuman-git-code/serverless-image-optimizer.git" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                        <div class="featured-project-card">
-                            <h4>Cloud File Storage System</h4>
-                            <p class="project-tech">AWS Lambda, S3, DynamoDB, Cognito, CloudFormation, Python, JavaScript</p>
-                            <p class="project-description-short">Production-ready serverless file storage with 6 Lambda functions, Cognito authentication, and secure file sharing with time-limited presigned URLs. One-command CloudFormation deployment with ~$0.01 cost per operation.</p>
-                            <a href="https://github.com/Anshuman-git-code/AWS_Drive_Storage" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                        <div class="featured-project-card">
-                            <h4>Resume Parser & Job Matching System</h4>
-                            <p class="project-tech">AWS Lambda, Textract, DynamoDB, API Gateway, Python, S3</p>
-                            <p class="project-description-short">AI-powered resume screening with AWS Textract (99% accuracy), intelligent skill parsing (50+ skills), and job matching algorithm. Event-driven architecture processing 1000+ resumes/month.</p>
-                            <a href="https://github.com/Anshuman-git-code/Resume-Parser-Skill-Matcher" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                        <div class="featured-project-card">
-                            <h4>3-Tier DevSecOps Project</h4>
-                            <p class="project-tech">React.js, Node.js, MySQL 8, Docker, Kubernetes, Jenkins, ArgoCD, SonarQube, Trivy, Terraform</p>
-                            <p class="project-description-short">Enterprise-grade 3-tier application with comprehensive DevSecOps practices, CI/CD pipeline with integrated security scanning, and GitOps deployment achieving 85% reduction in deployment time.</p>
-                            <a href="https://github.com/Anshuman-git-code/3-Tier-DevSecOps-Project" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                        <div class="featured-project-card">
-                            <h4>Netflix-Clone-Deployment</h4>
-                            <p class="project-tech">AWS EC2, Jenkins, Docker, Docker Hub, SonarQube, Trivy, Kubernetes, Prometheus, Grafana, OWASP Dependency Check, TMDB API, React, TypeScript, Email (SMTP), GitHub</p>
-                            <p class="project-description-short">This project demonstrates a complete end-to-end DevOps pipeline for deploying a Netflix Clone application, including CI/CD, security scanning, containerization, monitoring, and Kubernetes orchestration.</p>
-                            <a href="https://github.com/Anshuman-git-code/Netflix-Clone-Deploy.git" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                        <div class="featured-project-card">
-                            <h4>Redit-Clone-Deployment</h4>
-                            <p class="project-tech">AWS EC2, AWS EKS, Terraform, Jenkins, Docker, Docker Hub,SonarQube, Trivy, ArgoCD, Prometheus, Grafana, Email (SMTP), GitHub</p>
-                            <p class="project-description-short">This project demonstrates a complete end-to-end DevOps pipeline for deploying a Reddit Clone application using modern cloud-native tools and GitOps practices.</p>
-                            <a href="https://github.com/Anshuman-git-code/Redit-Clone-Deployment.git" target="_blank" class="featured-project-link">View on GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="diagram-frame">
+        <svg viewBox="0 0 920 300" role="img" aria-label="Architecture diagram: Client requests hit API Gateway, routed to a Registration Lambda which writes to DynamoDB and publishes an event to EventBridge; EventBridge triggers a Ticket Generation Lambda which stores the ticket in S3 and sends it via SES. CloudWatch monitors all Lambdas, IAM enforces least privilege throughout.">
+          <defs>
+            <marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#8a8a97"/></marker>
+          </defs>
+          <g font-family="JetBrains Mono, monospace" font-size="12" fill="#f2f2f4">
+            <rect x="20" y="120" width="90" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-client" x="50" y="128" width="30" height="30" color="#9a9aa2"/>
+            <text x="65" y="188" text-anchor="middle" fill="#9a9aa2">Attendee</text>
+
+            <rect x="160" y="120" width="110" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-apigw" x="175" y="132" width="26" height="26" color="#ff9900"/>
+            <text x="230" y="152" text-anchor="middle">API Gateway</text>
+
+            <rect x="320" y="120" width="140" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="335" y="132" width="26" height="26" color="#ff9900"/>
+            <text x="400" y="145" text-anchor="middle">Registration</text>
+            <text x="400" y="160" text-anchor="middle" fill="#9a9aa2" font-size="11">Lambda</text>
+
+            <rect x="510" y="40" width="130" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-dynamodb" x="522" y="52" width="26" height="26" color="#ff9900"/>
+            <text x="590" y="72" text-anchor="middle">DynamoDB</text>
+
+            <rect x="510" y="200" width="130" height="56" rx="8" fill="#18181d" stroke="#7c4dff"/>
+            <use href="#svc-eventbridge" x="522" y="212" width="26" height="26" color="#b69bff"/>
+            <text x="590" y="232" text-anchor="middle">EventBridge</text>
+
+            <rect x="690" y="200" width="130" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="702" y="212" width="26" height="26" color="#ff9900"/>
+            <text x="755" y="223" text-anchor="middle">Ticket Gen</text>
+            <text x="755" y="238" text-anchor="middle" fill="#9a9aa2" font-size="11">Lambda</text>
+
+            <rect x="690" y="120" width="130" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-s3" x="702" y="132" width="26" height="26" color="#ff9900"/>
+            <text x="755" y="152" text-anchor="middle">S3 (Tickets)</text>
+
+            <rect x="690" y="40" width="130" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-ses" x="702" y="52" width="26" height="26" color="#ff9900"/>
+            <text x="755" y="72" text-anchor="middle">SES (Email)</text>
+          </g>
+          <g stroke="#8a8a97" stroke-width="1.5" fill="none" marker-end="url(#arrow1)">
+            <path d="M110 148 H160"/>
+            <path d="M270 148 H320"/>
+            <path d="M460 140 Q485 68 510 68"/>
+            <path d="M460 156 Q485 228 510 228"/>
+            <path d="M640 228 H690"/>
+            <path d="M755 200 V176"/>
+            <path d="M755 120 V96"/>
+          </g>
+          <text x="460" y="288" text-anchor="middle" fill="#8a8a97" font-family="JetBrains Mono, monospace" font-size="11">CloudWatch monitors every Lambda · IAM least-privilege role per function · Terraform provisions all resources</text>
+        </svg>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Engineering Decisions <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body decision-list">
+            <div class="decision-item"><p class="q">Why EventBridge?</p><p class="a">To decouple registration from ticket generation — the attendee gets a fast, guaranteed response, and ticket creation scales independently on its own schedule.</p></div>
+            <div class="decision-item"><p class="q">Why DynamoDB?</p><p class="a">Access patterns were mapped before the schema — three tables with Global Secondary Indexes support every query the app needs without table scans.</p></div>
+            <div class="decision-item"><p class="q">Why Terraform?</p><p class="a">Reusable, versioned Infrastructure as Code — the entire environment is reproducible from a single apply.</p></div>
+            <div class="decision-item"><p class="q">Why serverless?</p><p class="a">Registration traffic is spiky around event announcements — Lambda gives automatic scaling with no idle operational cost.</p></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card"><svg class="service-icon"><use href="#svc-apigw"/></svg><span class="service-name">API Gateway</span><span class="service-role">Receives and routes HTTP requests</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-lambda"/></svg><span class="service-name">Lambda</span><span class="service-role">Runs registration and ticketing logic</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-dynamodb"/></svg><span class="service-name">DynamoDB</span><span class="service-role">Stores events, registrations, tickets</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-eventbridge"/></svg><span class="service-name">EventBridge</span><span class="service-role">Decouples registration from ticketing</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-ses"/></svg><span class="service-name">SES</span><span class="service-role">Delivers the generated ticket by email</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-s3"/></svg><span class="service-name">S3</span><span class="service-role">Stores ticket files privately</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-cognito"/></svg><span class="service-name">Cognito</span><span class="service-role">JWT authentication &amp; role access</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-terraform"/></svg><span class="service-name">Terraform</span><span class="service-role">Provisions the full infrastructure</span></div>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Security <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body security-list">
+            <div class="security-item"><svg><use href="#i-shield"/></svg><div><p class="label">Authentication</p><p class="desc">Amazon Cognito issues JWT tokens; every API request is verified before it reaches business logic.</p></div></div>
+            <div class="security-item"><svg><use href="#i-shield"/></svg><div><p class="label">Authorization</p><p class="desc">Role-based access control distinguishes organizer and attendee capabilities inside the backend.</p></div></div>
+            <div class="security-item"><svg><use href="#i-lock"/></svg><div><p class="label">IAM</p><p class="desc">Each Lambda has its own role scoped to only the resources that function needs — least privilege by default.</p></div></div>
+            <div class="security-item"><svg><use href="#i-lock"/></svg><div><p class="label">Storage</p><p class="desc">Ticket files stay private in S3; access is granted only through short-lived pre-signed URLs, never public reads.</p></div></div>
+          </div>
+        </details>
+        <details class="expand-block">
+          <summary>Production Considerations &amp; Lessons <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body">
+            <p class="challenges-text">The hardest part wasn't wiring EventBridge — it was resisting the urge to make registration wait for ticket delivery. Once I accepted that registration and fulfillment are two different guarantees, the async boundary became obvious. The bigger lesson: identify the business capability the system revolves around before choosing any AWS service around it.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="project-footer">
+        <a class="btn btn-primary btn-sm" href="https://github.com/Anshuman-git-code/Event-Ticketing-System-V3.git" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> Repository</a>
+        <a class="btn btn-sm" href="https://d2xd67ws8yeqrk.cloudfront.net/" target="_blank" rel="noopener"><svg><use href="#i-external"/></svg> Live Demo</a>
+      </div>
+    </article>
+
+    <!-- PROJECT 2: LINKFORGE PRO -->
+    <article class="project reveal">
+      <div class="project-top">
+        <div class="project-tag-row">
+          <span class="project-number">02 / 04</span>
+          <span class="project-tag">Production-Oriented SaaS</span>
         </div>
-    </section>
+        <h3>LinkForge Pro — URL Shortener &amp; Analytics Platform</h3>
+        <p class="project-problem">
+          <strong>Business problem —</strong> organizations need a secure URL-shortening platform with branded short
+          codes, click analytics, and administrative visibility — not just a redirect service. Link creation,
+          redirection, and administration needed to scale and evolve independently of one another.
+        </p>
+      </div>
 
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-title-wrapper">
-                                <img src="images/logos/f13tech_logo.jpeg" alt="F13 Technologies" class="company-logo">
-                                <h3>AWS Cloud Engineer (Team Lead)</h3>
-                            </div>
-                            <span class="timeline-date">Sep 2025 - Dec 2025 · 4 mos</span>
-                        </div>
-                        <p class="timeline-company"><i class="fas fa-building"></i> F13 Technologies · Internship | Mumbai, Maharashtra, India</p>
-                        <div class="tech-stack-summary">
-                            <span class="tech-badge">AWS Lambda</span>
-                            <span class="tech-badge">DynamoDB</span>
-                            <span class="tech-badge">S3</span>
-                            <span class="tech-badge">API Gateway</span>
-                            <span class="tech-badge">CloudFormation</span>
-                        </div>
-                        <ul class="timeline-achievements">
-                            <li>Led a cross-functional team of <strong>4 engineers</strong> in building and deploying scalable AWS serverless solutions, improving overall team delivery and coordination through effective sprint planning and task delegation</li>
-                            <li>Designed and implemented high-volume, event-driven processing workflows using AWS Lambda, API Gateway, S3, DynamoDB, and SQS, achieving high accuracy, reduced manual effort, and significant operational cost savings</li>
-                            <li>Built secure backend components with authentication, encryption standards, and best practices for cloud data handling, maintaining low-latency APIs (<strong>&lt;200ms</strong>) and reliable uptime (<strong>99.9%</strong>)</li>
-                            <li>Strengthened cloud engineering expertise through hands-on work and advanced training across domains such as cloud architecture, containerization, migrations, cost optimization, governance, and generative AI on AWS</li>
-                            <li>Delivered Infrastructure as Code (IaC) solutions using CloudFormation and established CI/CD pipelines with automated testing and security checks, enabling frequent and stable production deployments</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="diagram-frame">
+        <svg viewBox="0 0 920 280" role="img" aria-label="Architecture diagram: static frontend on S3 calls three separate API Gateway endpoints backed by dedicated Lambda functions for create, redirect, and admin, all reading and writing a single DynamoDB table keyed by short code.">
+          <defs>
+            <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#8a8a97"/></marker>
+          </defs>
+          <g font-family="JetBrains Mono, monospace" font-size="12" fill="#f2f2f4">
+            <rect x="20" y="112" width="100" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-client" x="45" y="122" width="26" height="26" color="#9a9aa2"/>
+            <text x="70" y="180" text-anchor="middle" fill="#9a9aa2">User / Admin</text>
+
+            <rect x="170" y="112" width="120" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-apigw" x="184" y="124" width="26" height="26" color="#ff9900"/>
+            <text x="240" y="144" text-anchor="middle">API Gateway</text>
+
+            <rect x="340" y="20" width="140" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="352" y="30" width="24" height="24" color="#ff9900"/>
+            <text x="415" y="52" text-anchor="middle">Create Link</text>
+
+            <rect x="340" y="114" width="140" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="352" y="124" width="24" height="24" color="#ff9900"/>
+            <text x="415" y="146" text-anchor="middle">Redirect</text>
+
+            <rect x="340" y="208" width="140" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="352" y="218" width="24" height="24" color="#ff9900"/>
+            <text x="415" y="240" text-anchor="middle">Admin</text>
+
+            <rect x="560" y="112" width="140" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-dynamodb" x="574" y="124" width="26" height="26" color="#ff9900"/>
+            <text x="640" y="144" text-anchor="middle">DynamoDB</text>
+
+            <rect x="770" y="112" width="130" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-cloudfront" x="782" y="124" width="26" height="26" color="#ff9900"/>
+            <text x="835" y="144" text-anchor="middle">301 Redirect</text>
+          </g>
+          <g stroke="#8a8a97" stroke-width="1.5" fill="none" marker-end="url(#arrow2)">
+            <path d="M120 140 H170"/>
+            <path d="M290 128 Q315 46 340 46"/>
+            <path d="M290 140 H340"/>
+            <path d="M290 152 Q315 234 340 234"/>
+            <path d="M480 46 Q520 140 560 140"/>
+            <path d="M480 140 H560"/>
+            <path d="M480 234 Q520 140 560 140"/>
+            <path d="M700 140 H770"/>
+          </g>
+          <text x="460" y="266" text-anchor="middle" fill="#8a8a97" font-family="JetBrains Mono, monospace" font-size="11">Hash key = short code · CloudFormation provisions all resources · CORS restricted to origin</text>
+        </svg>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Engineering Decisions <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body decision-list">
+            <div class="decision-item"><p class="q">Why separate capabilities?</p><p class="a">Link creation, redirection and administration evolve at different rates — splitting them into independent Lambdas means each can change without risking the others.</p></div>
+            <div class="decision-item"><p class="q">Why prioritize redirect over analytics?</p><p class="a">If a click-count update fails, the user is still redirected successfully — a broken analytics write should never become a broken link.</p></div>
+            <div class="decision-item"><p class="q">Why hash-key on short code?</p><p class="a">Every redirect operation starts with the short code, so it made sense as the DynamoDB partition key for single-digit-millisecond lookups.</p></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card"><svg class="service-icon"><use href="#svc-apigw"/></svg><span class="service-name">API Gateway</span><span class="service-role">Exposes 3 independent REST APIs</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-lambda"/></svg><span class="service-name">Lambda</span><span class="service-role">One scoped function per capability</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-dynamodb"/></svg><span class="service-name">DynamoDB</span><span class="service-role">Hash-key lookup by short code</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-cloudfront"/></svg><span class="service-name">CloudFront</span><span class="service-role">Fast static frontend delivery</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-iam"/></svg><span class="service-name">IAM</span><span class="service-role">Least-privilege role per Lambda</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-cloudwatch"/></svg><span class="service-name">CloudWatch</span><span class="service-role">Logs and operational metrics</span></div>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Security <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body security-list">
+            <div class="security-item"><svg><use href="#i-lock"/></svg><div><p class="label">Validation</p><p class="desc">URL format, length limits, and custom short-code collisions are checked before any write.</p></div></div>
+            <div class="security-item"><svg><use href="#i-shield"/></svg><div><p class="label">IAM</p><p class="desc">Each of the three Lambdas holds a role scoped only to the DynamoDB actions it actually performs.</p></div></div>
+            <div class="security-item"><svg><use href="#i-lock"/></svg><div><p class="label">CORS</p><p class="desc">API Gateway CORS is origin-restricted rather than wildcarded.</p></div></div>
+          </div>
+        </details>
+        <details class="expand-block">
+          <summary>Production Considerations &amp; Lessons <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body">
+            <p class="challenges-text">The lesson from this project wasn't about implementing features — it was learning to identify independent business capabilities and give each one a single responsibility. That separation is what made the system easy to extend later with QR codes and CSV export without touching the redirect path.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="project-footer">
+        <a class="btn btn-primary btn-sm" href="https://github.com/Anshuman-git-code/Linkforge_Pro.git" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> Repository</a>
+        <a class="btn btn-sm" href="http://url-shortener-infra-frontend-690081480550.s3-website-us-east-1.amazonaws.com/" target="_blank" rel="noopener"><svg><use href="#i-external"/></svg> Live Demo</a>
+      </div>
+    </article>
+
+    <!-- PROJECT 3: RESUME PARSER -->
+    <article class="project reveal">
+      <div class="project-top">
+        <div class="project-tag-row">
+          <span class="project-number">03 / 04</span>
+          <span class="project-tag">AI + Serverless</span>
         </div>
-    </section>
+        <h3>Resume Parser &amp; Job Matching Platform</h3>
+        <p class="project-problem">
+          <strong>Business problem —</strong> recruiters spend minutes manually reviewing every resume for skills and
+          suitability, a process that doesn't scale with applicant volume. The goal was a pipeline where a recruiter
+          uploads a PDF and the system extracts skills, matches candidates to jobs, and surfaces results automatically.
+        </p>
+      </div>
 
-    <section id="certifications" class="certifications-section">
-        <div class="container">
-            <h2 class="section-title">AWS Certifications & Badges</h2>
-            <p class="section-subtitle">Click on any badge to view the certificate</p>
-            <div class="certifications-grid">
-                <a href="certificates/AWS Cloud Economics 2.pdf" target="_blank" class="cert-card">
-                    <div class="cert-badge-wrapper">
-                        <img src="badges/aws-partner-cloud-economics-essentials-training-bad-2.png" alt="AWS Cloud Economics Badge" class="cert-badge-img">
-                    </div>
-                    <h4>AWS Cloud Economics</h4>
-                    <span class="cert-view-link"><i class="fas fa-external-link-alt"></i> View Certificate</span>
-                </a>
-                <a href="certificates/AWS Containers on AWS.pdf" target="_blank" class="cert-card">
-                    <div class="cert-badge-wrapper">
-                        <img src="badges/aws-partner-technical-accredited-training-badge-2.png" alt="AWS Containers Badge" class="cert-badge-img">
-                    </div>
-                    <h4>AWS Containers (Technical)</h4>
-                    <span class="cert-view-link"><i class="fas fa-external-link-alt"></i> View Certificate</span>
-                </a>
-                <a href="certificates/Digital Sovereignty on AWS (Technical).pdf" target="_blank" class="cert-card">
-                    <div class="cert-badge-wrapper">
-                        <img src="badges/aws-partner-digital-sovereignty-on-aws-technical-tr.png" alt="AWS Digital Sovereignty Badge" class="cert-badge-img">
-                    </div>
-                    <h4>AWS Digital Sovereignty</h4>
-                    <span class="cert-view-link"><i class="fas fa-external-link-alt"></i> View Certificate</span>
-                </a>
-                <a href="certificates/Migrating Workloads to AWS (Technical).pdf" target="_blank" class="cert-card">
-                    <div class="cert-badge-wrapper">
-                        <img src="badges/aws-partner-technical-accredited-training-badge-2.png" alt="AWS Migration Badge" class="cert-badge-img">
-                    </div>
-                    <h4>AWS Migration Essentials</h4>
-                    <span class="cert-view-link"><i class="fas fa-external-link-alt"></i> View Certificate</span>
-                </a>
-                <a href="certificates/Generative AI Essentials.pdf" target="_blank" class="cert-card">
-                    <div class="cert-badge-wrapper">
-                        <img src="badges/aws-partner-generative-ai-essentials-training-badge.png" alt="AWS Generative AI Badge" class="cert-badge-img">
-                    </div>
-                    <h4>AWS Generative AI Essentials</h4>
-                    <span class="cert-view-link"><i class="fas fa-external-link-alt"></i> View Certificate</span>
-                </a>
-                <a href="certificates/AWS Networking Basics.pdf" target="_blank" class="cert-card">
-                    <div class="cert-badge-wrapper">
-                        <img src="badges/aws-partner-technical-accredited-training-badge-2.png" alt="AWS Networking Badge" class="cert-badge-img">
-                    </div>
-                    <h4>AWS Networking Basics</h4>
-                    <span class="cert-view-link"><i class="fas fa-external-link-alt"></i> View Certificate</span>
-                </a>
-            </div>
+      <div class="diagram-frame">
+        <svg viewBox="0 0 920 260" role="img" aria-label="Architecture diagram: recruiter uploads a resume through API Gateway to an Upload Lambda which stores it in S3; an S3 event triggers a Textract processor Lambda, which triggers a skill parser Lambda, which triggers a job matcher Lambda, storing results in DynamoDB.">
+          <defs>
+            <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#8a8a97"/></marker>
+          </defs>
+          <g font-family="JetBrains Mono, monospace" font-size="12" fill="#f2f2f4">
+            <rect x="20" y="100" width="100" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-client" x="45" y="110" width="26" height="26" color="#9a9aa2"/>
+            <text x="70" y="168" text-anchor="middle" fill="#9a9aa2">Recruiter</text>
+
+            <rect x="160" y="100" width="110" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-apigw" x="174" y="112" width="24" height="24" color="#ff9900"/>
+            <text x="215" y="132" text-anchor="middle">Upload</text>
+            <text x="215" y="146" text-anchor="middle" fill="#9a9aa2" font-size="11">Lambda</text>
+
+            <rect x="310" y="100" width="110" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-s3" x="324" y="112" width="24" height="24" color="#ff9900"/>
+            <text x="365" y="132" text-anchor="middle">S3</text>
+            <text x="365" y="146" text-anchor="middle" fill="#9a9aa2" font-size="11">raw resumes</text>
+
+            <rect x="460" y="20" width="130" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-textract" x="472" y="30" width="24" height="24" color="#ff9900"/>
+            <text x="525" y="52" text-anchor="middle">Textract</text>
+
+            <rect x="460" y="180" width="130" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="472" y="190" width="24" height="24" color="#ff9900"/>
+            <text x="525" y="212" text-anchor="middle">Skill Parser</text>
+
+            <rect x="640" y="100" width="130" height="56" rx="8" fill="#18181d" stroke="#7c4dff"/>
+            <use href="#svc-lambda" x="652" y="112" width="24" height="24" color="#b69bff"/>
+            <text x="705" y="132" text-anchor="middle">Job Matcher</text>
+
+            <rect x="800" y="100" width="110" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-dynamodb" x="812" y="112" width="24" height="24" color="#ff9900"/>
+            <text x="855" y="132" text-anchor="middle">DynamoDB</text>
+          </g>
+          <g stroke="#8a8a97" stroke-width="1.5" fill="none" marker-end="url(#arrow3)">
+            <path d="M120 128 H160"/>
+            <path d="M270 128 H310"/>
+            <path d="M420 118 Q440 46 460 46"/>
+            <path d="M420 138 Q440 206 460 206"/>
+            <path d="M590 206 Q615 128 640 128"/>
+            <path d="M770 128 H800"/>
+          </g>
+          <text x="460" y="248" text-anchor="middle" fill="#8a8a97" font-family="JetBrains Mono, monospace" font-size="11">Each stage triggers the next via S3 &amp; DynamoDB Streams events · no single monolithic processor</text>
+        </svg>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Engineering Decisions <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body decision-list">
+            <div class="decision-item"><p class="q">Why an event-driven pipeline?</p><p class="a">Four independent stages — upload, extract, parse, match — each with one responsibility, instead of one large service performing everything sequentially.</p></div>
+            <div class="decision-item"><p class="q">Why Textract over a custom parser?</p><p class="a">Document intelligence at ~99% extraction accuracy is a solved problem — building that in-house wasn't where the engineering value was.</p></div>
+            <div class="decision-item"><p class="q">Why DynamoDB Streams?</p><p class="a">Streams let each stage react to the previous one's write without polling, keeping the pipeline fully event-driven end to end.</p></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card"><svg class="service-icon"><use href="#svc-textract"/></svg><span class="service-name">Textract</span><span class="service-role">Extracts structured text from PDFs</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-lambda"/></svg><span class="service-name">Lambda</span><span class="service-role">Runs each pipeline stage</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-s3"/></svg><span class="service-name">S3</span><span class="service-role">Stores raw &amp; processed resumes</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-dynamodb"/></svg><span class="service-name">DynamoDB</span><span class="service-role">Candidate profiles &amp; match scores</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-apigw"/></svg><span class="service-name">API Gateway</span><span class="service-role">Recruiter-facing REST APIs</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-terraform"/></svg><span class="service-name">Terraform</span><span class="service-role">Repeatable infrastructure</span></div>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Security <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body security-list">
+            <div class="security-item"><svg><use href="#i-lock"/></svg><div><p class="label">Storage</p><p class="desc">Resumes are never public — access happens only through pre-signed S3 URLs.</p></div></div>
+            <div class="security-item"><svg><use href="#i-shield"/></svg><div><p class="label">IAM</p><p class="desc">Six Lambdas, six scoped roles — each touches only its own stage's resources.</p></div></div>
+            <div class="security-item"><svg><use href="#i-check"/></svg><div><p class="label">Validation</p><p class="desc">Upload Handler validates file type and size before anything reaches the processing pipeline.</p></div></div>
+          </div>
+        </details>
+        <details class="expand-block">
+          <summary>Production Considerations &amp; Lessons <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body">
+            <p class="challenges-text">Large business workflows get dramatically easier once they're decomposed into independent, event-driven stages instead of one application trying to do everything. Each stage focuses on a single responsibility and hands off automatically — that's what let the pipeline process real candidates against real job postings without a single orchestration script.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="project-footer">
+        <a class="btn btn-primary btn-sm" href="https://github.com/Anshuman-git-code/Resume-Parser-Skill-Matcher.git" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> Repository</a>
+        <a class="btn btn-sm" href="http://resume-parser-bucket-main-anshuman.s3-website.ap-south-1.amazonaws.com/frontend/index.html" target="_blank" rel="noopener"><svg><use href="#i-external"/></svg> Live Demo</a>
+      </div>
+    </article>
+
+    <!-- PROJECT 4: IMAGE OPTIMIZATION -->
+    <article class="project reveal">
+      <div class="project-top">
+        <div class="project-tag-row">
+          <span class="project-number">04 / 04</span>
+          <span class="project-tag">Event Driven</span>
         </div>
-    </section>
+        <h3>Serverless Image Optimization Pipeline</h3>
+        <p class="project-problem">
+          <strong>Business problem —</strong> uploading and resizing high-resolution images synchronously slows down
+          the upload request and wastes compute. The goal was letting users upload once while the system generates
+          multiple optimized resolutions automatically, without Lambda ever sitting in the file-transfer path.
+        </p>
+      </div>
 
-    <section id="education" class="education-section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h4>B.Tech - Computer Science</h4>
-                    <p class="education-school">ITER, SOA University</p>
-                    <p class="education-year">2022 - Present</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-school"></i></div>
-                    <h4>Senior Secondary, CBSE</h4>
-                    <p class="education-school">St. Xavier's High School</p>
-                    <p class="education-year">2020 - 2022</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-school"></i></div>
-                    <h4>Secondary, CBSE</h4>
-                    <p class="education-school">DAV Public School</p>
-                    <p class="education-year">2010 - 2020</p>
-                </div>
-            </div>
+      <div class="diagram-frame">
+        <svg viewBox="0 0 920 260" role="img" aria-label="Architecture diagram: client requests a pre-signed URL from an Upload Lambda via API Gateway, then uploads directly to an S3 input bucket. The S3 ObjectCreated event triggers an Image Processor Lambda that generates three resolutions into an output bucket. A Download Lambda issues pre-signed URLs for retrieval.">
+          <defs>
+            <marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#8a8a97"/></marker>
+          </defs>
+          <g font-family="JetBrains Mono, monospace" font-size="12" fill="#f2f2f4">
+            <rect x="20" y="100" width="100" height="56" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-client" x="45" y="110" width="26" height="26" color="#9a9aa2"/>
+            <text x="70" y="168" text-anchor="middle" fill="#9a9aa2">Client</text>
+
+            <rect x="160" y="30" width="130" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="172" y="40" width="24" height="24" color="#ff9900"/>
+            <text x="225" y="62" text-anchor="middle">Upload Auth</text>
+
+            <rect x="160" y="130" width="130" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-s3" x="172" y="140" width="24" height="24" color="#ff9900"/>
+            <text x="225" y="162" text-anchor="middle">S3 Input</text>
+
+            <rect x="360" y="130" width="150" height="52" rx="8" fill="#18181d" stroke="#7c4dff"/>
+            <use href="#svc-lambda" x="372" y="140" width="24" height="24" color="#b69bff"/>
+            <text x="435" y="162" text-anchor="middle">Image Processor</text>
+
+            <rect x="580" y="130" width="130" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-s3" x="592" y="140" width="24" height="24" color="#ff9900"/>
+            <text x="645" y="162" text-anchor="middle">S3 Output</text>
+
+            <rect x="780" y="30" width="120" height="52" rx="8" fill="#18181d" stroke="#35353d"/>
+            <use href="#svc-lambda" x="792" y="40" width="24" height="24" color="#ff9900"/>
+            <text x="840" y="62" text-anchor="middle">Download</text>
+          </g>
+          <g stroke="#8a8a97" stroke-width="1.5" fill="none" marker-end="url(#arrow4)">
+            <path d="M120 130 Q140 56 160 56"/>
+            <path d="M120 145 Q140 156 160 156"/>
+            <path d="M290 156 H360"/>
+            <path d="M510 156 H580"/>
+            <path d="M710 148 Q745 60 780 56"/>
+          </g>
+          <text x="460" y="238" text-anchor="middle" fill="#8a8a97" font-family="JetBrains Mono, monospace" font-size="11">Browser uploads directly to S3 via pre-signed URL — Lambda authorizes, never transfers the file</text>
+        </svg>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Engineering Decisions <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body decision-list">
+            <div class="decision-item"><p class="q">Why keep Lambda out of the transfer path?</p><p class="a">S3 handles object uploads far more efficiently than Lambda ever could — routing the file through compute would only add latency and cost.</p></div>
+            <div class="decision-item"><p class="q">Why two separate buckets?</p><p class="a">Splitting original and processed images gives cleaner IAM boundaries, simpler lifecycle rules, and easier debugging than one shared bucket.</p></div>
+            <div class="decision-item"><p class="q">Why Pillow in a Docker-built layer?</p><p class="a">Native image libraries need to match the Lambda execution environment — building via Docker guarantees Amazon Linux compatibility.</p></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card"><svg class="service-icon"><use href="#svc-lambda"/></svg><span class="service-name">Lambda</span><span class="service-role">Authorizes uploads, resizes images</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-s3"/></svg><span class="service-name">S3</span><span class="service-role">Separate input &amp; output buckets</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-apigw"/></svg><span class="service-name">API Gateway</span><span class="service-role">Issues pre-signed URL requests</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-cloudfront"/></svg><span class="service-name">CloudFront</span><span class="service-role">Delivers processed images</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-iam"/></svg><span class="service-name">IAM</span><span class="service-role">Per-Lambda least-privilege roles</span></div>
+        <div class="service-card"><svg class="service-icon"><use href="#svc-terraform"/></svg><span class="service-name">Terraform</span><span class="service-role">30 resources, fully reproducible</span></div>
+      </div>
+
+      <div class="project-expand">
+        <details class="expand-block">
+          <summary>Security <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body security-list">
+            <div class="security-item"><svg><use href="#i-lock"/></svg><div><p class="label">Storage</p><p class="desc">Both buckets stay private; every read and write happens through short-lived pre-signed URLs.</p></div></div>
+            <div class="security-item"><svg><use href="#i-shield"/></svg><div><p class="label">IAM</p><p class="desc">Each Lambda's role is scoped to exactly the bucket and actions its stage needs — nothing shared.</p></div></div>
+          </div>
+        </details>
+        <details class="expand-block">
+          <summary>Production Considerations &amp; Lessons <svg class="chevron"><use href="#i-chevron"/></svg></summary>
+          <div class="expand-body">
+            <p class="challenges-text">Good cloud architecture isn't about moving data through more services — it's about moving data as little as possible while moving permissions intelligently. Letting storage handle storage and compute handle processing made the system more scalable and far easier to reason about.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="project-footer">
+        <a class="btn btn-primary btn-sm" href="https://github.com/Anshuman-git-code/serverless-image-optimizer.git" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> Repository</a>
+        <a class="btn btn-sm" href="http://image-pipeline-frontend-man.s3-website.ap-south-1.amazonaws.com/" target="_blank" rel="noopener"><svg><use href="#i-external"/></svg> Live Demo</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================= ENGINEERING PHILOSOPHY ============================= -->
+<section id="philosophy" aria-labelledby="philosophy-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Engineering Philosophy</span>
+      <h2 id="philosophy-heading">How I think as a Cloud Engineer</h2>
+      <p>
+        I believe cloud engineering begins with understanding the business problem, not selecting AWS services.
+        Every project in this portfolio was designed by deriving architecture from business requirements,
+        identifying capabilities and ownership boundaries, evaluating trade-offs, and only then choosing the
+        technology that satisfies them.
+      </p>
+    </div>
+    <div class="philosophy">
+      <div class="philosophy-copy reveal">
+        <p>In practice, that means working through actors, business capabilities, and access patterns before a single AWS resource gets provisioned. A DynamoDB table gets its keys from the queries the application actually needs to run — not the other way around.</p>
+        <p>I focus on understanding <em>why</em> a system should be designed a certain way before deciding <em>how</em> to implement it. That order — not the reverse — is what makes systems easier to maintain, scale, and reason about six months later, and it's the order every project on this page follows.</p>
+      </div>
+      <ol class="workflow reveal">
+        <li class="workflow-step">
+          <p class="step-index">01</p>
+          <h3>Business Requirement</h3>
+          <p>What actual problem is this solving, and for whom?</p>
+        </li>
+        <li class="workflow-step">
+          <p class="step-index">02</p>
+          <h3>Architecture Design</h3>
+          <p>Actors, business capabilities, ownership boundaries and access patterns — mapped before any service is chosen.</p>
+        </li>
+        <li class="workflow-step">
+          <p class="step-index">03</p>
+          <h3>AWS Services</h3>
+          <p>Services are selected to satisfy the architecture — never the other way around.</p>
+        </li>
+        <li class="workflow-step">
+          <p class="step-index">04</p>
+          <h3>Infrastructure as Code</h3>
+          <p>Every resource defined in Terraform or CloudFormation, versioned and reproducible.</p>
+        </li>
+        <li class="workflow-step">
+          <p class="step-index">05</p>
+          <h3>Security</h3>
+          <p>Least-privilege IAM, private storage, and authentication designed in, not bolted on.</p>
+        </li>
+        <li class="workflow-step">
+          <p class="step-index">06</p>
+          <h3>Verification</h3>
+          <p>Does the system actually behave the way the architecture intended?</p>
+        </li>
+        <li class="workflow-step">
+          <p class="step-index">07</p>
+          <h3>Deployment</h3>
+          <p>Shipped through a repeatable pipeline, not a manual console click-through.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TECHNICAL SKILLS ============================= -->
+<section id="skills" aria-labelledby="skills-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Technical Skills</span>
+      <h2 id="skills-heading">Tools I build production systems with</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>Cloud</h3>
+        <ul>
+          <li>AWS Lambda</li><li>API Gateway</li><li>DynamoDB</li><li>S3</li>
+          <li>EventBridge</li><li>Cognito</li><li>SES</li><li>EC2 · ECS · EKS</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Infrastructure as Code</h3>
+        <ul>
+          <li>Terraform</li><li>CloudFormation</li><li>AWS CDK</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Containers</h3>
+        <ul>
+          <li>Docker</li><li>Kubernetes</li><li>Amazon EKS</li><li>Amazon ECS</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>CI/CD</h3>
+        <ul>
+          <li>GitHub Actions</li><li>Jenkins</li><li>ArgoCD</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Programming</h3>
+        <ul>
+          <li>Python</li><li>Bash</li><li>JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Monitoring</h3>
+        <ul>
+          <li>CloudWatch</li><li>Prometheus</li><li>Grafana</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Networking</h3>
+        <ul>
+          <li>Amazon VPC</li><li>Route 53</li><li>CloudFront</li><li>IAM</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Linux &amp; Git</h3>
+        <ul>
+          <li>Ubuntu / Amazon Linux</li><li>Git</li><li>GitOps</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= EXPERIENCE ============================= -->
+<section id="experience" aria-labelledby="experience-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Experience</span>
+      <h2 id="experience-heading">Where I've applied this</h2>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-logo">
+        <img src="assets/logos/f13tech_logo.jpeg" alt="F13 Technologies logo" loading="lazy" />
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-role">
+            <h3>AWS Cloud Engineer Intern — Team Lead</h3>
+            <p class="company">F13 Technologies · Remote</p>
+          </div>
+          <p class="exp-meta">Sep 2025 – Dec 2025</p>
         </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">AWS Lambda</span>
-                        <span class="skill-item">AWS S3</span>
-                        <span class="skill-item">AWS EKS</span>
-                        <span class="skill-item">AWS EC2</span>
-                        <span class="skill-item">AWS DynamoDB</span>
-                        <span class="skill-item">AWS Textract</span>
-                        <span class="skill-item">AWS Cognito</span>
-                        <span class="skill-item">AWS CloudFormation</span>
-                        <span class="skill-item">AWS API Gateway</span>
-                        <span class="skill-item">AWS VPC</span>
-                        <span class="skill-item">AWS IAM</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">Kubernetes</span>
-                        <span class="skill-item">Helm</span>
-                        <span class="skill-item">Terraform</span>
-                        <span class="skill-item">ArgoCD</span>
-                        <span class="skill-item">Jenkins</span>
-                        <span class="skill-item">GitHub Actions</span>
-                        <span class="skill-item">Ansible</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">Shell Scripting (Bash)</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">C++</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Infrastructure & Networking</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Linux Administration</span>
-                        <span class="skill-item">VPC</span>
-                        <span class="skill-item">Subnets</span>
-                        <span class="skill-item">Security Groups</span>
-                        <span class="skill-item">NAT Gateway</span>
-                        <span class="skill-item">Route Tables</span>
-                        <span class="skill-item">Load Balancers</span>
-                        <span class="skill-item">Microservices</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Practices</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">CI/CD</span>
-                        <span class="skill-item">GitOps</span>
-                        <span class="skill-item">Infrastructure as Code</span>
-                        <span class="skill-item">FinOps</span>
-                        <span class="skill-item">SonarQube</span>
-                        <span class="skill-item">Trivy</span>
-                        <span class="skill-item">Prometheus</span>
-                        <span class="skill-item">Grafana</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Kubernetes</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Deployments</span>
-                        <span class="skill-item">Services</span>
-                        <span class="skill-item">Ingress</span>
-                        <span class="skill-item">HPA</span>
-                        <span class="skill-item">PVC</span>
-                        <span class="skill-item">ConfigMaps</span>
-                        <span class="skill-item">Secrets</span>
-                    </div>
-                </div>
-            </div>
+        <ul class="exp-impact">
+          <li><svg><use href="#i-check"/></svg><span><strong>Selected as Team Lead</strong> after demonstrating cloud architecture skill, ownership and delivery during internship training.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Led a team through architecting and deploying <strong>production-oriented serverless applications</strong> on AWS, improving delivery speed by <strong>40%</strong> through structured task breakdown and clear ownership.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Designed and delivered multiple production-oriented serverless systems spanning <strong>secure storage, AI-powered pipelines, analytics platforms, and URL management</strong> — each built to scale independently.</span></li>
+          <li><svg><use href="#i-check"/></svg><span>Coordinated parallel workstreams across the team, keeping architecture decisions aligned and deployments on time.</span></li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">AWS Lambda</span><span class="tag">Terraform</span><span class="tag">DynamoDB</span><span class="tag">Team Leadership</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>AWS Event Ticketing System</h3>
-                        <p class="project-date">Nov - Dec 2025</p>
-                        <p class="project-tech">AWS Lambda, S3, CloudFront, API Gateway, DynamoDB, Cognito, CloudFormation, Python, JavaScript</p>
-                        <p class="project-description">
-                            Built a production-grade, multi-region serverless SaaS platform on AWS with event-driven Lambda architecture, DynamoDB (10 GSIs for single-digit ms latency), secure Cognito authentication, and Infrastructure-as-Code enabling full deployment in 15 minutes at $13/month cost. Features & Performance: Implemented end-to-end event creation, registration, payments, digital ticketing with PDF generation, QR-based validation, fraud prevention, global CDN delivery, sub-second response times, and scalability for 1M+ users.</p> 
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/aws-event-ticketing-system.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>LinkForge Pro</h3>
-                        <p class="project-date">Nov - Dec 2025</p>
-                        <p class="project-tech">AWS Lambda, S3, DynamoDB, IAM, API Gateway, CloudFormation, Python, JavaScript</p>
-                        <p class="project-description">
-                            A production-grade, serverless URL shortener built with AWS services. Features real-time analytics, custom short codes, QR code generation, and a comprehensive admin dashboard.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Linkforge_Pro.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Image Optimization Pipeline</h3>
-                        <p class="project-date">Nov - Dec 2025</p>
-                        <p class="project-tech">AWS Lambda, S3, API Gateway, Python, AWS IAM, AWS CloudWatch</p>
-                        <p class="project-description">
-                            This project provides an automated solution for image optimization, perfect for CMS systems, portfolios, blogs, and e-commerce platforms. Upload high-resolution images and receive optimized versions in multiple resolutions (1080p, 720p, 480p) with 90-98% file size reduction.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/serverless-image-optimizer.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Cloud File Storage System</h3>
-                        <p class="project-date">Oct - Nov 2025</p>
-                        <p class="project-tech">AWS Lambda, S3, DynamoDB, Cognito, CloudFormation, Python, JavaScript</p>
-                        <p class="project-description">
-                            Developed production-ready serverless file storage application with 6 Lambda functions and AWS Cognito authentication. Implemented secure file sharing with time-limited presigned URLs (1-168 hour expiration), real-time dashboard, and drag-and-drop interface. Achieved one-command CloudFormation deployment with ~$0.01 cost per operation, sub-300ms API response times, 99.9% uptime, and unlimited concurrent users with enterprise-grade AES-256 encryption.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/AWS_Drive_Storage" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Resume Parser & Job Matching System</h3>
-                        <p class="project-date">Oct - Nov 2025</p>
-                        <p class="project-tech">AWS Lambda, Textract, DynamoDB, API Gateway, Python, S3</p>
-                        <p class="project-description">
-                            Built AI-powered resume screening system with AWS Textract (99% accuracy) for text extraction, intelligent skill parsing engine (50+ skills), and job matching algorithm. Designed event-driven architecture with S3 triggers and DynamoDB Streams for automatic processing. Created recruiter dashboard with advanced filtering and visual match scores. Processing 1000+ resumes/month with 90% reduction in manual screening effort and potential annual savings of $30K-100K for organizations.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Resume-Parser-Skill-Matcher" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>3-Tier DevSecOps Project</h3>
-                        <p class="project-date">Aug 2025</p>
-                        <p class="project-tech">React.js, Node.js, MySQL 8, Docker, Kubernetes, Jenkins, ArgoCD, SonarQube, Trivy, Terraform</p>
-                        <p class="project-description">
-                            Transformed traditional 3-tier web application into enterprise-grade system with comprehensive DevSecOps practices. Implemented CI/CD pipeline with integrated security scanning (SonarQube, Trivy) and GitOps deployment using ArgoCD for declarative infrastructure management and automated rollouts. Achieved 85% reduction in deployment time, 100% elimination of manual deployment errors, 99% system uptime, and automated security scanning preventing vulnerabilities.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/3-Tier-DevSecOps-Project" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>2-Tier Flask Application - Multi-Platform Deployment</h3>
-                        <p class="project-date">Aug 2025</p>
-                        <p class="project-tech">Flask, Docker, Kubernetes, AWS EKS, Helm, MySQL, Python</p>
-                        <p class="project-description">
-                            Demonstrated complete containerization journey transforming Flask application into cloud-native solution deployed across Docker, Kubernetes, AWS EKS, and Helm. Configured HPA, PVC for MySQL, and implemented ConfigMaps/Secrets for environment-specific configuration. Achieved 99.9% uptime, 80% reduction in deployment complexity, standardized Kubernetes manifests, and auto-scaling based on traffic.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/two-tier-app-eks-deployment" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Migrated VotingApp - GitHub Actions to Azure Pipeline</h3>
-                        <p class="project-date">Jul 2025</p>
-                        <p class="project-tech">Azure DevOps, Azure Container Registry, Docker, Microservices, YAML Pipelines</p>
-                        <p class="project-description">
-                            Executed comprehensive CI/CD platform migration from GitHub Actions to Azure DevOps Pipelines for multi-microservice voting application, maintaining 100% feature parity. Implemented Azure Container Registry integration with vulnerability scanning and multi-stage pipelines for enterprise-grade container management. Demonstrated cross-platform DevOps expertise with centralized pipeline management and automated vulnerability scanning.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Migrated-VotingApp-Github-To-Azure-Pipline" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>AWS Resource CLI Tool</h3>
-                        <p class="project-date">Jul 2025</p>
-                        <p class="project-tech">Shell Scripting, AWS CLI, Bash, Automation</p>
-                        <p class="project-description">
-                            Developed comprehensive Shell script automating AWS resource inventory across 14+ services including EC2, RDS, S3, IAM, Lambda, and CloudWatch. Implemented input validation, AWS CLI verification, and service-specific case logic with proper error handling. Achieved 90% reduction in manual resource auditing time (70 minutes reduced to 70 seconds), enabling rapid infrastructure assessment and cost optimization workflows.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Shell_AWS_Resource_Manegment" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>FinOps - Reduce Cloud Cost for CI/CD Logging</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">Shell Scripting, AWS S3, ELK Stack, Bash, AWS CLI</p>
-                        <p class="project-description">
-                            Implemented FinOps cost optimization solution reducing CI/CD logging infrastructure costs by 50%+ through intelligent log management. Migrated from expensive ELK stack ($500/month) to cost-effective Amazon S3 ($23/month) while maintaining data accessibility and compliance requirements. Automated daily log processing with AWS CLI, implemented lifecycle rules, and maintained compliance with scalable solution for growing log volumes.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/FinOps-Reduce-cloud-cost-for-CI-CD-logging" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Netflix-Clone-Deployment</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">AWS EC2, Jenkins, Docker, Docker Hub, SonarQube, Trivy, Kubernetes, Prometheus, Grafana, OWASP Dependency Check, TMDB API, React, TypeScript, Email (SMTP), GitHub</p>
-                        <p class="project-description">
-                            This project demonstrates a complete end-to-end DevOps pipeline for deploying a Netflix Clone application built with React and TypeScript. It showcases enterprise-grade automation from code commit to production deployment with comprehensive CI/CD integration, security scanning, code quality analysis, containerization, monitoring, and Kubernetes orchestration using modern cloud-native tools and GitOps practices.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Netflix-Clone-Deploy.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>E-Commerce-Three-Tier-Application-EKS-Deployment</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">AWS EKS, eksctl, kubectl, AWS CLI, IAM OIDC, AWS ALB Controller, EBS CSI Driver, Helm, Kubernetes, Microservices, AWS Load Balancer</p>
-                        <p class="project-description">
-                            This project demonstrates a complete end-to-end deployment of a microservices-based E-Commerce Three-Tier application (Stan's Robot Shop) on Amazon EKS (Elastic Kubernetes Service). It showcases enterprise-grade cloud-native architecture following Kubernetes best practices with AWS managed services integration, comprehensive microservices orchestration, and production-ready infrastructure automation using modern container orchestration and service mesh technologies.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/E-Commerce-Three-Tier-Application-Deploy-on-AWS-EKS.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Redit-Clone-Deployment</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">AWS EC2, AWS EKS, Terraform, Jenkins, Docker, Docker Hub,SonarQube, Trivy, Kubernetes (EKS), ArgoCD, Prometheus, Grafana, Email (SMTP), GitHub</p>
-                        <p class="project-description">
-                            This project demonstrates a complete end-to-end DevOps pipeline for deploying a Reddit Clone application using modern cloud-native tools and GitOps practices. It showcases enterprise-grade automation from code commit to production deployment with comprehensive monitoring and security.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Redit-Clone-Deployment.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Infra-Code-To-Prod-k8s</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">Terraform, AWS EC2, AWS EKS, Jenkins, SonarQube, JFrog Artifactory, Docker, Kubernetes (AWS EKS),Trivy</p>
-                        <p class="project-description">
-                            This project demonstrates a complete enterprise-grade CI/CD pipeline that automates the entire software delivery lifecycle from infrastructure provisioning to production deployment on Kubernetes. It showcases how to transform infrastructure code into a fully operational production environment using modern DevOps tools and practices. 
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Infra-Code-To-Prod-k8s.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Registration App Jenkins Maven Deploy</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">Jenkins, Maven, Docker, AWS EC2, Amazon Linux, Tomcat</p>
-                        <p class="project-description">
-                            A complete Jenkins CI/CD pipeline with Docker integration on AWS EC2, automating Java web application builds and deployments. Features automated Maven builds, Docker containerization, and seamless artifact deployment across dedicated Jenkins and Docker host instances. Demonstrates enterprise DevOps practices.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/registration-app-Jenkins_Maven_Deploy.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Jenkins Kubernetes Orchestrator</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">Docker, Jenkins, Maven, Trivy, Kubernetes (EKS), SonarQube, ArgoCD, Tomcat</p>
-                        <p class="project-description">
-                            End-to-end CI/CD pipeline implementation using Jenkins, SonarQube, Docker, and Kubernetes (EKS) with GitOps methodology via ArgoCD. Features automated build, test, security scanning, and deployment of a Java web application with infrastructure as code principles.                       
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Jenkins-Kubernetes-Orchestrator.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>DevSecOps Setup and Integration</h3>
-                        <p class="project-date">Jun 2025</p>
-                        <p class="project-tech">Jenkins, SonarQube, OWASP ZAP, CI/CD, Security Scanning</p>
-                        <p class="project-description">
-                            Implemented a complete DevSecOps pipeline integrating Jenkins, SonarQube, and OWASP ZAP. Set up automated security scanning within the CI/CD workflow to detect vulnerabilities early in the development lifecycle. Configured Jenkins for continuous integration, SonarQube for code quality analysis, and OWASP ZAP for security testing, resulting in improved code quality and reduced security risks.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/DevSecOps-Setup-Integretion.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Wanderlust MERN Application Kubernetes Deployment</h3>
-                        <p class="project-date">May 2025</p>
-                        <p class="project-tech">Kubernetes, Docker, MongoDB, Redis, Node.js, React, AWS EC2</p>
-                        <p class="project-description">
-                            Deployed a microservices travel platform on Kubernetes using kubeadm with master-worker architecture. Implemented namespace isolation, persistent storage, and proper service discovery. Created custom Docker images with environment configurations and deployed on AWS EC2 with NodePort exposure.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/wanderlust-MERN-k8s-deployment.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Online Shop Kubernetes Deployment</h3>
-                        <p class="project-date">May 2025</p>
-                        <p class="project-tech">Kubernetes, Docker, Amazon Q, Infrastructure as Code</p>
-                        <p class="project-description">
-                            Designed and implemented Kubernetes manifests for a containerized online shop application. Created dedicated namespace with 3-replica deployment and NodePort service exposure. Demonstrated AI-assisted infrastructure deployment using Amazon Q for manifest creation and troubleshooting.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/online-shop-k8s-AmazonQ.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Multi-Stage Dockerized Web Scraper</h3>
-                        <p class="project-date">Apr 2025</p>
-                        <p class="project-tech">Docker, Node.js, Puppeteer, Python, Flask, Alpine Linux</p>
-                        <p class="project-description">
-                            Designed a lightweight multi-stage Docker scraper using Node.js (Puppeteer) and Flask. Reduced image size by 70% with Alpine, enhanced security with non-root users, and improved container startup by 30%. Served scraped data via Flask API.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/multi-stage-puppeteer-flask-scraper.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Full Stack Chat Application Deployment</h3>
-                        <p class="project-date">Apr 2025</p>
-                        <p class="project-tech">DevOps, Cloud, CI/CD, Kubernetes</p>
-                        <p class="project-description">
-                            Automated build and deployment with GitHub Actions. Created Kubernetes manifests for backend, frontend, and MongoDB, enabling cloud scalability on AWS.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/full-stack_chatApp.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Automated Voting App Deployment with Argo CD</h3>
-                        <p class="project-date">Apr 2025</p>
-                        <p class="project-tech">AWS EC2, Kubernetes, Kind, Argo CD, GitOps, CI/CD</p>
-                        <p class="project-description">
-                            Orchestrated scalable application deployment on AWS EC2 using Kubernetes and Argo CD. Implemented GitOps workflows for continuous deployment, achieving 60% improved deployment efficiency and 99.9% uptime. Created visual management through Kubernetes dashboard for streamlined operations.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/k8s-kind-voting-app-on-Kubernetes-With-ArgoCD.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Kubernetes Containerized Code Execution Platform</h3>
-                        <p class="project-date">Mar - Apr 2025</p>
-                        <p class="project-tech">Python, Flask, React, Docker, Kubernetes, Nginx</p>
-                        <p class="project-description">
-                            Built a secure multi-language code execution platform (Python, C, JavaScript) using Flask APIs in isolated Docker containers. Implemented security restrictions with keyword filtering and resource limits. Created a React frontend with real-time output display and containerized the entire application with proper isolation and automatic cleanup.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Execution-Containerized-k8s.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>AI-Powered Chatbot</h3>
-                        <p class="project-date">Feb 2025</p>
-                        <p class="project-tech">Python, Flask, Langchain, Hugging Face, FAISS, LLMs</p>
-                        <p class="project-description">
-                            Built an RAG-based chatbot using FAISS for semantic search and Falcon 7B via Hugging Face. Scraped and chunked Brainlox data, embedded using MiniLM, and served responses via a Flask API with secure key handling and logging.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Langchain_Flask_Bot.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Real-time Cryptocurrency Data Integration</h3>
-                        <p class="project-date">Feb 2025</p>
-                        <p class="project-tech">Python, REST API, Pandas, CoinGecko API, Data Automation</p>
-                        <p class="project-description">
-                            Automated crypto analytics using CoinGecko API. Fetched top 50 coins every 5 minutes, analyzed trends with Pandas, and logged metrics (gainers, losers, averages) to CSV for live dashboards.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/crypto-data-fetching.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3>Flask Blog Application</h3>
-                        <p class="project-date">Oct - Dec 2024</p>
-                        <p class="project-tech">Python, Flask, SQLAlchemy, Flask-WTF, Flask-Bcrypt, Jinja2</p>
-                        <p class="project-description">
-                            Developed a blog with user auth, CRUD posts, and responsive UI. Used SQLAlchemy, Flask-Migrate, CSRF-protected forms, and Bcrypt-secure passwords.
-                        </p>
-                        <a href="https://github.com/Anshuman-git-code/Your_Blog.git" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
+<!-- ============================= CERTIFICATIONS ============================= -->
+<section id="certifications" aria-labelledby="certifications-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Certifications</span>
+      <h2 id="certifications-heading">AWS Partner training, verified</h2>
+    </div>
+    <div class="cert-groups">
+      <div class="reveal">
+        <p class="cert-group-title">Cloud Fundamentals &amp; Economics</p>
+        <div class="cert-grid">
+          <a class="cert-card" href="assets/certificates/AWS-Cloud-Economics-2.pdf" target="_blank" rel="noopener">
+            <div class="cert-badge"><img src="assets/badges/aws-partner-cloud-economics-essentials-training-bad-2.png" alt="" loading="lazy" /></div>
+            <div class="cert-info"><p class="name">AWS Cloud Economics</p><p class="date">Oct 2025</p></div>
+          </a>
+          <a class="cert-card" href="assets/certificates/AWS-Networking-Basics.pdf" target="_blank" rel="noopener">
+            <div class="cert-badge"><img src="assets/badges/aws-partner-technical-accredited-training-badge-2.png" alt="" loading="lazy" /></div>
+            <div class="cert-info"><p class="name">AWS Technical Essentials</p><p class="date">Oct 2025</p></div>
+          </a>
+          <a class="cert-card" href="assets/certificates/IAM.pdf" target="_blank" rel="noopener">
+            <div class="cert-badge"><img src="assets/badges/aws-partner-technical-accredited-training-badge-2.png" alt="" loading="lazy" /></div>
+            <div class="cert-info"><p class="name">IAM Fundamentals</p><p class="date">Oct 2025</p></div>
+          </a>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p><a href="mailto:anshuman.mohapatra04@gmail.com">anshuman.mohapatra04@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p><a href="tel:+917978294262">+91 79782 94262</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <h3>GitHub</h3>
-                            <p><a href="https://github.com/Anshuman-git-code" target="_blank">github.com/Anshuman-git-code</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/anshuman-mohapatra-a6b1b0325" target="_blank">linkedin.com/in/anshuman-mohapatra-a6b1b0325</a></p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn primary-btn">Send Message</button>
-                </form>
-            </div>
+      </div>
+      <div class="reveal">
+        <p class="cert-group-title">Containers &amp; Migration</p>
+        <div class="cert-grid">
+          <a class="cert-card" href="assets/certificates/AWS-Containers-on-AWS.pdf" target="_blank" rel="noopener">
+            <div class="cert-badge"><img src="assets/badges/aws-partner-technical-accredited-training-badge-2.png" alt="" loading="lazy" /></div>
+            <div class="cert-info"><p class="name">AWS Containers (Technical)</p><p class="date">Oct 2025</p></div>
+          </a>
+          <a class="cert-card" href="assets/certificates/Migrating-Workloads-to-AWS-Technical.pdf" target="_blank" rel="noopener">
+            <div class="cert-badge"><img src="assets/badges/aws-partner-technical-accredited-training-badge-2.png" alt="" loading="lazy" /></div>
+            <div class="cert-info"><p class="name">Migration Essentials</p><p class="date">Oct 2025</p></div>
+          </a>
+          <a class="cert-card" href="assets/certificates/Digital-Sovereignty-on-AWS-Technical.pdf" target="_blank" rel="noopener">
+            <div class="cert-badge"><img src="assets/badges/aws-partner-digital-sovereignty-on-aws-technical-tr.png" alt="" loading="lazy" /></div>
+            <div class="cert-info"><p class="name">Digital Sovereignty on AWS</p><p class="date">Oct 2025</p></div>
+          </a>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Anshuman Mohapatra</h4>
-                    <p>Cloud & DevOps Engineer specializing in AWS serverless solutions and cloud-native deployments.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="footer-social">
-                        <a href="https://github.com/Anshuman-git-code" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/anshuman-mohapatra-a6b1b0325" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:anshuman.mohapatra04@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="tel:+917978294262" title="Phone"><i class="fas fa-phone"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Anshuman Mohapatra. All rights reserved.</p>
-                <p class="footer-tagline">Built with <i class="fas fa-heart"></i> and passion for cloud technology</p>
-            </div>
+      </div>
+      <div class="reveal">
+        <p class="cert-group-title">AI on AWS</p>
+        <div class="cert-grid">
+          <a class="cert-card" href="assets/certificates/Generative-AI-Essentials.pdf" target="_blank" rel="noopener">
+            <div class="cert-badge"><img src="assets/badges/aws-partner-generative-ai-essentials-training-badge.png" alt="" loading="lazy" /></div>
+            <div class="cert-info"><p class="name">Generative AI Essentials</p><p class="date">Oct 2025</p></div>
+          </a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top" title="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+<!-- ============================= EDUCATION ============================= -->
+<section id="education" aria-labelledby="education-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Education</span>
+      <h2 id="education-heading">Foundation</h2>
+    </div>
+    <div class="edu-card reveal">
+      <div>
+        <h3>B.Tech, Computer Science Engineering</h3>
+        <p class="school">ITER, SOA University</p>
+        <p class="coursework">Relevant coursework: Operating Systems, Computer Networks, Database Management Systems, Distributed Systems.</p>
+      </div>
+      <p class="edu-meta">2022 — Present</p>
+    </div>
+  </div>
+</section>
 
-    <script src="js/script.js"></script>
+<!-- ============================= GITHUB & RESUME ============================= -->
+<section id="github-resume" aria-labelledby="gh-resume-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">GitHub &amp; Resume</span>
+      <h2 id="gh-resume-heading">Verify it yourself</h2>
+    </div>
+    <div class="gh-resume-grid">
+      <div class="panel-card reveal">
+        <svg class="panel-icon"><use href="#i-github"/></svg>
+        <h3>GitHub</h3>
+        <p>Every project on this page links back to its repository — commit history, Terraform modules, and Lambda code included, not just a demo link.</p>
+        <div class="panel-repos">
+          <a class="panel-repo" href="https://github.com/Anshuman-git-code/Event-Ticketing-System-V3.git" target="_blank" rel="noopener">Event-Ticketing-System-V3</a>
+          <a class="panel-repo" href="https://github.com/Anshuman-git-code/Linkforge_Pro.git" target="_blank" rel="noopener">Linkforge_Pro</a>
+          <a class="panel-repo" href="https://github.com/Anshuman-git-code/Resume-Parser-Skill-Matcher.git" target="_blank" rel="noopener">Resume-Parser-Skill-Matcher</a>
+          <a class="panel-repo" href="https://github.com/Anshuman-git-code/serverless-image-optimizer.git" target="_blank" rel="noopener">serverless-image-optimizer</a>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://github.com/Anshuman-git-code" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> Visit GitHub</a>
+        </div>
+      </div>
+      <div class="panel-card reveal">
+        <svg class="panel-icon"><use href="#i-download"/></svg>
+        <h3>Resume</h3>
+        <p>One page. AWS certifications, the four projects above, technical skill breakdown, and F13 Technologies experience — formatted for a fast recruiter read.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="assets/resume/AnshumanMohapatra-Resume.pdf" target="_blank" rel="noopener"><svg><use href="#i-external"/></svg> View Resume</a>
+          <a class="btn btn-accent" href="assets/resume/AnshumanMohapatra-Resume.pdf" download><svg><use href="#i-download"/></svg> Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CONTACT ============================= -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-heading">Let's talk</h2>
+      <p>Open to Cloud Engineer, DevOps Engineer, Platform Engineer and Infrastructure Engineer roles — remote or in India.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-card reveal" href="mailto:anshuman.mohapatra04@gmail.com">
+        <svg><use href="#i-mail"/></svg>
+        <span class="label">Email</span>
+        <span class="value">anshuman.mohapatra04@gmail.com</span>
+      </a>
+      <a class="contact-card reveal" href="https://www.linkedin.com/in/anshuman-mohapatra-a6b1b0325/" target="_blank" rel="noopener">
+        <svg><use href="#i-linkedin"/></svg>
+        <span class="label">LinkedIn</span>
+        <span class="value">anshuman-mohapatra</span>
+      </a>
+      <a class="contact-card reveal" href="https://github.com/Anshuman-git-code" target="_blank" rel="noopener">
+        <svg><use href="#i-github"/></svg>
+        <span class="label">GitHub</span>
+        <span class="value">Anshuman-git-code</span>
+      </a>
+      <div class="contact-card reveal">
+        <svg><use href="#i-pin"/></svg>
+        <span class="label">Location</span>
+        <span class="value">Bhubaneswar, India</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year">2026</span> Anshuman Mohapatra — built with intent, not a template.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Anshuman-git-code" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/anshuman-mohapatra-a6b1b0325/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:anshuman.mohapatra04@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
