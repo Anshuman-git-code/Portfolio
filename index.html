@@ -366,115 +366,56 @@
           </div>
 
           <div class="diagram-frame">
-            <svg viewBox="0 0 960 360" role="img"
-              aria-label="Architecture diagram: Client to API Gateway to Registration Lambda, which writes to DynamoDB and fires EventBridge; EventBridge triggers Ticket Gen Lambda which writes to S3 and sends via SES.">
+            <svg viewBox="0 0 980 370" role="img" aria-label="Event Ticketing: Attendee authenticates via Cognito, API Gateway routes to Registration Lambda which writes to DynamoDB and fires EventBridge; EventBridge asynchronously triggers Ticket Gen Lambda which stores QR ticket in S3 and sends via SES">
               <defs>
-                <marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                  <path d="M0 0 L8 4 L0 8 Z" fill="#5a5a6a" />
-                </marker>
-              </defs>
-              <!-- Row 1: DynamoDB (top) -->
-              <rect x="490" y="20" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="511" y="30" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <ellipse cx="12" cy="5.5" rx="8" ry="2.7" stroke="#ff9900" stroke-width="1.6" />
-                <path stroke="#ff9900" stroke-width="1.6"
-                  d="M4 5.5v13c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7v-13M4 12c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7" />
-              </svg>
-              <text x="560" y="73" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">DynamoDB</text>
-
-              <!-- Row 1: SES (top right) -->
-              <rect x="790" y="20" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="811" y="30" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="5" width="18" height="14" rx="1.5" stroke="#ff9900" stroke-width="1.6" />
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" d="m4 6.5 8 6.5 8-6.5" />
-              </svg>
-              <text x="860" y="68" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">SES</text>
-              <text x="860" y="85" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Email</text>
-
-              <!-- Row 2: Attendee -->
-              <rect x="20" y="150" width="110" height="80" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="45" y="160" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#9a9aa2" stroke-width="1.6" />
-                <path stroke="#9a9aa2" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4" />
-              </svg>
-              <text x="75" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12"
-                fill="#9a9aa2">Attendee</text>
-
-              <!-- Row 2: API Gateway -->
-              <rect x="175" y="150" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="201" y="160" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z" />
-              </svg>
-              <text x="245" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">API</text>
-              <text x="245" y="216" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Gateway</text>
-
-              <!-- Row 2: Registration Lambda -->
-              <rect x="360" y="150" width="150" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="386" y="160" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="435" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Registration</text>
-              <text x="435" y="216" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- Row 2: S3 Tickets -->
-              <rect x="790" y="150" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="811" y="160" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z" />
-                <path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2" />
-              </svg>
-              <text x="860" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">S3</text>
-              <text x="860" y="216" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Tickets</text>
-
-              <!-- Row 3: EventBridge -->
-              <rect x="490" y="280" width="140" height="80" rx="10" fill="#18181d" stroke="#7c4dff"
-                stroke-width="1.5" />
-              <svg x="511" y="290" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <circle cx="5" cy="6" r="2.2" stroke="#b69bff" stroke-width="1.5" />
-                <circle cx="19" cy="6" r="2.2" stroke="#b69bff" stroke-width="1.5" />
-                <circle cx="12" cy="18" r="2.2" stroke="#b69bff" stroke-width="1.5" />
-                <path stroke="#b69bff" stroke-width="1.5" d="M7 7h10M6.3 8 11 16M17.7 8 13 16" />
-              </svg>
-              <text x="560" y="333" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">EventBridge</text>
-
-              <!-- Row 3: Ticket Gen Lambda -->
-              <rect x="680" y="280" width="150" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="706" y="290" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="755" y="325" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Ticket Gen</text>
-              <text x="755" y="341" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- Arrows -->
-              <g stroke="#5a5a6a" stroke-width="1.5" fill="none" marker-end="url(#arrow1)">
-                <path d="M130 190 H175" />
-                <path d="M315 190 H360" />
-                <path d="M510 165 Q500 100 490 60" />
-                <path d="M510 210 Q500 290 490 320" />
-                <path d="M630 320 H680" />
-                <path d="M755 280 V232" />
-                <path d="M830 280 Q830 232 860 100" />
-              </g>
-              <!-- Footer -->
-              <text x="480" y="350" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#5a5a6a">CloudWatch · IAM least-privilege per function · Terraform provisions all resources</text>
+<marker id="a1" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#555566"/></marker>
+<marker id="a1p" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#7c4dff"/></marker>
+</defs>
+<rect x="490" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="542" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="5.5" rx="8" ry="2.7" stroke="#ff9900" stroke-width="1.6"/><path stroke="#ff9900" stroke-width="1.6" d="M4 5.5v13c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7v-13M4 12c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7"/></svg>
+<text x="555" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">DynamoDB</text>
+<text x="555" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">registrations</text>
+<rect x="820" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="872" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="1.5" stroke="#ff9900" stroke-width="1.6"/><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" d="m4 6.5 8 6.5 8-6.5"/></svg>
+<text x="885" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">SES</text>
+<text x="885" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">email delivery</text>
+<rect x="10" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="62" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#6a6a82" stroke-width="1.6"/><path stroke="#6a6a82" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4"/></svg>
+<text x="75" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#9a9aa2">Attendee</text>
+<rect x="170" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="222" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z"/></svg>
+<text x="235" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">API Gateway</text>
+<text x="235" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">REST / HTTP</text>
+<rect x="330" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="382" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="395" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Registration</text>
+<text x="395" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">Lambda</text>
+<rect x="820" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="872" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z"/><path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2"/></svg>
+<text x="885" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">S3</text>
+<text x="885" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">QR tickets</text>
+<rect x="490" y="276" width="130" height="76" rx="10" fill="#1c1c22" stroke="#7c4dff" stroke-width="1.5"/>
+<svg x="542" y="287" width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="5" cy="6" r="2.2" stroke="#b69bff" stroke-width="1.5"/><circle cx="19" cy="6" r="2.2" stroke="#b69bff" stroke-width="1.5"/><circle cx="12" cy="18" r="2.2" stroke="#b69bff" stroke-width="1.5"/><path stroke="#b69bff" stroke-width="1.5" d="M7 7h10M6.3 8 11 16M17.7 8 13 16"/></svg>
+<text x="555" y="336" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#c9b8ff">EventBridge</text>
+<text x="555" y="348" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#7c4dff">async event bus</text>
+<rect x="660" y="276" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="712" y="287" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="725" y="336" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Ticket Gen</text>
+<text x="725" y="348" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">Lambda</text>
+<rect x="10" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="62" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#ff9900" stroke-width="1.6"/><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" d="M5 20c.7-4 3.4-6.2 7-6.2S18.3 16 19 20"/></svg>
+<text x="75" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Cognito</text>
+<text x="75" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">JWT auth</text>
+<path d="M140 186 L170 186" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M300 186 L330 186" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M460 170 Q474 78 490 58" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M460 202 Q474 292 490 314" stroke="#7c4dff" stroke-width="1.5" fill="none" marker-end="url(#a1p)"/>
+<path d="M620 314 L660 314" stroke="#7c4dff" stroke-width="1.5" fill="none" marker-end="url(#a1p)"/>
+<path d="M790 298 Q808 220 820 186" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M790 330 Q808 136 820 58" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M75 96 Q140 112 205 148" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<rect x="486" y="256" width="113" height="16" rx="4" fill="#1a1428"/><text x="490" y="268" font-family="JetBrains Mono,monospace" font-size="9" fill="#7c4dff" letter-spacing="0.5">ASYNC EVENT BUS</text>
+<text x="490" y="362" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#3a3a52">CloudFront + S3 serve frontend · CloudWatch monitors all Lambdas · Terraform provisions everything</text>
             </svg>
           </div>
 
@@ -627,107 +568,47 @@
           </div>
 
           <div class="diagram-frame">
-            <svg viewBox="0 0 960 320" role="img"
-              aria-label="Architecture diagram: User hits API Gateway which routes to three separate Lambdas: Create Link, Redirect, and Admin — all reading/writing a single DynamoDB table. Redirect Lambda returns 301 via CloudFront.">
+            <svg viewBox="0 0 860 310" role="img" aria-label="LinkForge Pro: User hits API Gateway which fans out to three independent Lambdas (Create Link, Redirect, Admin), all reading/writing DynamoDB. Redirect Lambda returns 301 HTTP redirect.">
               <defs>
-                <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                  <path d="M0 0 L8 4 L0 8 Z" fill="#5a5a6a" />
-                </marker>
-              </defs>
-              <!-- User/Admin -->
-              <rect x="20" y="120" width="120" height="80" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="46" y="130" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#9a9aa2" stroke-width="1.6" />
-                <path stroke="#9a9aa2" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4" />
-              </svg>
-              <text x="80" y="174" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12"
-                fill="#9a9aa2">User / Admin</text>
-
-              <!-- API Gateway -->
-              <rect x="185" y="120" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="211" y="130" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z" />
-              </svg>
-              <text x="255" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">API</text>
-              <text x="255" y="186" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Gateway</text>
-
-              <!-- Create Link Lambda -->
-              <rect x="375" y="20" width="150" height="80" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="401" y="30" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="450" y="70" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Create Link</text>
-              <text x="450" y="86" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- Redirect Lambda -->
-              <rect x="375" y="120" width="150" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="401" y="130" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="450" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Redirect</text>
-              <text x="450" y="186" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- Admin Lambda -->
-              <rect x="375" y="220" width="150" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="401" y="230" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="450" y="270" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Admin</text>
-              <text x="450" y="286" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- DynamoDB -->
-              <rect x="580" y="120" width="150" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="606" y="130" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <ellipse cx="12" cy="5.5" rx="8" ry="2.7" stroke="#ff9900" stroke-width="1.6" />
-                <path stroke="#ff9900" stroke-width="1.6"
-                  d="M4 5.5v13c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7v-13M4 12c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7" />
-              </svg>
-              <text x="655" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">DynamoDB</text>
-              <text x="655" y="186" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">short codes</text>
-
-              <!-- CloudFront -->
-              <rect x="790" y="120" width="150" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="816" y="130" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="8.5" stroke="#ff9900" stroke-width="1.6" />
-                <path stroke="#ff9900" stroke-width="1.4"
-                  d="M3.5 12h17M12 3.5c2.5 2.3 2.5 15 0 17M12 3.5c-2.5 2.3-2.5 15 0 17" />
-              </svg>
-              <text x="865" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">CloudFront</text>
-              <text x="865" y="186" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">301 Redirect</text>
-
-              <!-- Arrows -->
-              <g stroke="#5a5a6a" stroke-width="1.5" fill="none" marker-end="url(#arrow2)">
-                <path d="M140 160 H185" />
-                <path d="M325 148 Q350 60 375 60" />
-                <path d="M325 160 H375" />
-                <path d="M325 172 Q350 260 375 260" />
-                <path d="M525 60 Q555 130 580 155" />
-                <path d="M525 160 H580" />
-                <path d="M525 260 Q555 190 580 165" />
-                <path d="M730 160 H790" />
-              </g>
-              <text x="480" y="310" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#5a5a6a">Hash key = short code · CORS restricted to origin · IAM least-privilege per Lambda</text>
+<marker id="a2" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#555566"/></marker>
+</defs>
+<rect x="10" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="62" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z"/><path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2"/></svg>
+<text x="75" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">S3</text>
+<text x="75" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">static frontend</text>
+<rect x="10" y="119" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="62" y="130" width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#6a6a82" stroke-width="1.6"/><path stroke="#6a6a82" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4"/></svg>
+<text x="75" y="179" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#9a9aa2">User / Admin</text>
+<rect x="170" y="119" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="222" y="130" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z"/></svg>
+<text x="235" y="179" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">API Gateway</text>
+<text x="235" y="191" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">REST / CORS</text>
+<rect x="330" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="382" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="395" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Create Link</text>
+<text x="395" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">Lambda</text>
+<rect x="330" y="119" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="382" y="130" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="395" y="179" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Redirect</text>
+<text x="395" y="191" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">Lambda</text>
+<rect x="330" y="218" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="382" y="229" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="395" y="278" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Admin</text>
+<text x="395" y="290" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">Lambda</text>
+<rect x="490" y="119" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="542" y="130" width="26" height="26" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="5.5" rx="8" ry="2.7" stroke="#ff9900" stroke-width="1.6"/><path stroke="#ff9900" stroke-width="1.6" d="M4 5.5v13c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7v-13M4 12c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7"/></svg>
+<text x="555" y="179" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">DynamoDB</text>
+<text x="555" y="191" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">short code PK</text>
+<rect x="680" y="137" width="110" height="40" rx="8" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.2" stroke-dasharray="4 3"/><text x="735" y="153" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#9a9aa2">301</text><text x="735" y="169" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#55566a">HTTP redirect</text>
+<path d="M140 157 L170 157" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M300 141 Q318 62 330 58" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M300 157 L330 157" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M300 173 Q318 258 330 256" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M460 58 Q474 112 490 141" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M460 157 L490 157" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M460 256 Q474 224 490 173" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M620 157 L680 157" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<text x="430" y="302" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#3a3a52">Hash key = short code · redirect priority > analytics update · CORS restricted · IAM least-privilege per Lambda</text>
             </svg>
           </div>
 
@@ -861,111 +742,52 @@
           </div>
 
           <div class="diagram-frame">
-            <svg viewBox="0 0 960 300" role="img"
-              aria-label="Architecture diagram: Recruiter uploads via API Gateway to Upload Lambda, stored in S3. S3 triggers Textract. Textract output triggers Skill Parser Lambda. Skill Parser triggers Job Matcher Lambda which stores results in DynamoDB.">
+            <svg viewBox="0 0 980 230" role="img" aria-label="Resume Parser Pipeline: Recruiter uploads via API Gateway to Upload Handler Lambda to S3. S3 event triggers Textract Processor, then Skill Parser Lambda, then Job Matcher Lambda which stores results in DynamoDB.">
               <defs>
-                <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                  <path d="M0 0 L8 4 L0 8 Z" fill="#5a5a6a" />
-                </marker>
-              </defs>
-              <!-- Recruiter -->
-              <rect x="20" y="110" width="110" height="80" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="46" y="120" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#9a9aa2" stroke-width="1.6" />
-                <path stroke="#9a9aa2" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4" />
-              </svg>
-              <text x="75" y="163" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12"
-                fill="#9a9aa2">Recruiter</text>
-
-              <!-- API Gateway -->
-              <rect x="175" y="110" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="201" y="120" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z" />
-              </svg>
-              <text x="245" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">API</text>
-              <text x="245" y="176" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Gateway</text>
-
-              <!-- Upload Lambda -->
-              <rect x="360" y="110" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="386" y="120" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="430" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Upload</text>
-              <text x="430" y="176" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- S3 raw resumes -->
-              <rect x="555" y="110" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="581" y="120" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z" />
-                <path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2" />
-              </svg>
-              <text x="625" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">S3</text>
-              <text x="625" y="176" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">raw resumes</text>
-
-              <!-- Textract -->
-              <rect x="555" y="20" width="140" height="72" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="581" y="28" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M6 3h9l4 4v14H6z" />
-                <path stroke="#ff9900" stroke-width="1.4" d="M9 12h7M9 15.5h7M9 8.5h3" />
-              </svg>
-              <text x="625" y="66" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Textract</text>
-
-              <!-- Skill Parser -->
-              <rect x="745" y="110" width="140" height="80" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="771" y="120" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="815" y="160" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Skill Parser</text>
-              <text x="815" y="176" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- Job Matcher + DynamoDB row -->
-              <rect x="555" y="220" width="140" height="70" rx="10" fill="#18181d" stroke="#7c4dff"
-                stroke-width="1.5" />
-              <svg x="581" y="228" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#b69bff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="625" y="263" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Job Matcher</text>
-
-              <rect x="745" y="220" width="140" height="70" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="771" y="228" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <ellipse cx="12" cy="5.5" rx="8" ry="2.7" stroke="#ff9900" stroke-width="1.6" />
-                <path stroke="#ff9900" stroke-width="1.6"
-                  d="M4 5.5v13c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7v-13M4 12c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7" />
-              </svg>
-              <text x="815" y="262" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">DynamoDB</text>
-
-              <!-- Arrows -->
-              <g stroke="#5a5a6a" stroke-width="1.5" fill="none" marker-end="url(#arrow3)">
-                <path d="M130 150 H175" />
-                <path d="M315 150 H360" />
-                <path d="M500 150 H555" />
-                <path d="M625 110 V92" />
-                <path d="M695 56 Q720 140 745 150" />
-                <path d="M625 220 V190" />
-                <path d="M695 255 H745" />
-              </g>
-              <text x="480" y="290" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#5a5a6a">Each stage triggers the next via S3 &amp; DynamoDB Streams · no monolithic
-                processor</text>
+<marker id="a3" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#555566"/></marker>
+<marker id="a3p" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#7c4dff"/></marker>
+</defs>
+<rect x="10" y="76" width="118" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="56" y="87" width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#6a6a82" stroke-width="1.6"/><path stroke="#6a6a82" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4"/></svg>
+<text x="69" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#9a9aa2">Recruiter</text>
+<rect x="142" y="76" width="118" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="188" y="87" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z"/></svg>
+<text x="201" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f2f2f4">API Gateway</text>
+<text x="201" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#55566a">REST</text>
+<rect x="274" y="76" width="118" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="320" y="87" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="333" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f2f2f4">Upload Handler</text>
+<text x="333" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#55566a">Lambda</text>
+<rect x="406" y="76" width="118" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="452" y="87" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z"/><path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2"/></svg>
+<text x="465" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f2f2f4">S3</text>
+<text x="465" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#55566a">raw resumes</text>
+<rect x="538" y="76" width="118" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="584" y="87" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M6 3h9l4 4v14H6z"/><path stroke="#ff9900" stroke-width="1.4" d="M9 12h7M9 15.5h7M9 8.5h3"/></svg>
+<text x="597" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f2f2f4">Textract</text>
+<text x="597" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#55566a">AI extraction</text>
+<rect x="670" y="76" width="118" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="716" y="87" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="729" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f2f2f4">Skill Parser</text>
+<text x="729" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#55566a">Lambda</text>
+<rect x="802" y="76" width="118" height="76" rx="10" fill="#1c1c22" stroke="#7c4dff" stroke-width="1.5"/>
+<svg x="848" y="87" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#b69bff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="861" y="136" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#c9b8ff">Job Matcher</text>
+<text x="861" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#7c4dff">Lambda</text>
+<rect x="802" y="172" width="118" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="848" y="183" width="26" height="26" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="5.5" rx="8" ry="2.7" stroke="#ff9900" stroke-width="1.6"/><path stroke="#ff9900" stroke-width="1.6" d="M4 5.5v13c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7v-13M4 12c0 1.5 3.6 2.7 8 2.7s8-1.2 8-2.7"/></svg>
+<text x="861" y="232" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="#f2f2f4">DynamoDB</text>
+<text x="861" y="244" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#55566a">match scores</text>
+<path d="M128 114 L142 114" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a3)"/>
+<path d="M260 114 L274 114" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a3)"/>
+<path d="M392 114 L406 114" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a3)"/>
+<path d="M524 114 L538 114" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a3)"/>
+<path d="M656 114 L670 114" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a3)"/>
+<path d="M788 114 L802 114" stroke="#7c4dff" stroke-width="1.5" fill="none" marker-end="url(#a3p)"/>
+<path d="M861 152 L861 172" stroke="#7c4dff" stroke-width="1.5" fill="none" marker-end="url(#a3p)"/>
+<rect x="451" y="56" width="64" height="16" rx="4" fill="#1a1428"/><text x="455" y="68" font-family="JetBrains Mono,monospace" font-size="9" fill="#7c4dff" letter-spacing="0.5">S3 EVENT</text>
+<rect x="715" y="56" width="71" height="16" rx="4" fill="#1a1428"/><text x="719" y="68" font-family="JetBrains Mono,monospace" font-size="9" fill="#7c4dff" letter-spacing="0.5">DB STREAM</text>
+<text x="490" y="222" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#3a3a52">Each stage triggers the next · six scoped IAM roles · Terraform provisions full pipeline</text>
             </svg>
           </div>
 
@@ -1097,96 +919,50 @@
           </div>
 
           <div class="diagram-frame">
-            <svg viewBox="0 0 960 300" role="img"
-              aria-label="Architecture diagram: Client requests pre-signed URL from Upload Auth Lambda via API Gateway, uploads directly to S3 Input. S3 ObjectCreated event triggers Image Processor Lambda which writes 3 resolutions to S3 Output. Download Lambda serves pre-signed URLs for retrieval.">
+            <svg viewBox="0 0 980 290" role="img" aria-label="Image Pipeline: Client requests pre-signed URL from Upload Auth Lambda via API Gateway, uploads directly to S3 Input bypassing Lambda. S3 ObjectCreated triggers Image Processor Lambda which generates 3 resolutions in S3 Output. Download Lambda issues pre-signed retrieval URLs.">
               <defs>
-                <marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                  <path d="M0 0 L8 4 L0 8 Z" fill="#5a5a6a" />
-                </marker>
-              </defs>
-              <!-- Client -->
-              <rect x="20" y="110" width="110" height="80" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="46" y="120" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#9a9aa2" stroke-width="1.6" />
-                <path stroke="#9a9aa2" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4" />
-              </svg>
-              <text x="75" y="163" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12"
-                fill="#9a9aa2">Client</text>
-
-              <!-- Upload Auth Lambda (top) -->
-              <rect x="175" y="20" width="150" height="72" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="201" y="28" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="250" y="62" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Upload Auth</text>
-              <text x="250" y="78" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda + pre-signed URL</text>
-
-              <!-- S3 Input (middle row) -->
-              <rect x="175" y="140" width="150" height="72" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="201" y="150" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z" />
-                <path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2" />
-              </svg>
-              <text x="250" y="185" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">S3 Input</text>
-              <text x="250" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">direct upload</text>
-
-              <!-- Image Processor Lambda -->
-              <rect x="385" y="140" width="160" height="72" rx="10" fill="#18181d" stroke="#7c4dff"
-                stroke-width="1.5" />
-              <svg x="411" y="150" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#b69bff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="465" y="182" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Image Processor</text>
-              <text x="465" y="198" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda · 3 resolutions</text>
-
-              <!-- S3 Output -->
-              <rect x="605" y="140" width="150" height="72" rx="10" fill="#18181d" stroke="#35353d"
-                stroke-width="1.5" />
-              <svg x="631" y="150" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z" />
-                <path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2" />
-              </svg>
-              <text x="680" y="185" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">S3 Output</text>
-              <text x="680" y="200" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">processed images</text>
-
-              <!-- Download Lambda (top right) -->
-              <rect x="805" y="20" width="140" height="72" rx="10" fill="#18181d" stroke="#35353d" stroke-width="1.5" />
-              <svg x="831" y="28" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
-                  d="M6 4h3l9 16h-3M6 20l4.5-8" />
-              </svg>
-              <text x="875" y="60" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13"
-                fill="#f2f2f4">Download</text>
-              <text x="875" y="76" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#9a9aa2">Lambda</text>
-
-              <!-- Arrows -->
-              <g stroke="#5a5a6a" stroke-width="1.5" fill="none" marker-end="url(#arrow4)">
-                <!-- Client → Upload Auth (up) -->
-                <path d="M130 135 Q152 60 175 56" />
-                <!-- Client → S3 Input (direct) -->
-                <path d="M130 165 H175" />
-                <!-- S3 Input → Image Processor -->
-                <path d="M325 176 H385" />
-                <!-- Image Processor → S3 Output -->
-                <path d="M545 176 H605" />
-                <!-- S3 Output → Download Lambda (up right) -->
-                <path d="M755 165 Q780 80 805 56" />
-              </g>
-              <text x="480" y="285" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11"
-                fill="#5a5a6a">Browser uploads directly to S3 via pre-signed URL — Lambda authorizes, never transfers
-                the file</text>
+<marker id="a4" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#555566"/></marker>
+<marker id="a4p" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#7c4dff"/></marker>
+</defs>
+<rect x="10" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="62" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="1.4" stroke="#6a6a82" stroke-width="1.6"/><path stroke="#6a6a82" stroke-width="1.6" stroke-linecap="round" d="M9 20h6M12 16v4"/></svg>
+<text x="75" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#9a9aa2">Client</text>
+<rect x="170" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="222" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M4 5h16l-6 7v7h-4v-7L4 5Z"/></svg>
+<text x="235" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">API Gateway</text>
+<text x="235" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">REST</text>
+<rect x="330" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="382" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="395" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Upload Auth</text>
+<text x="395" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">Lambda</text>
+<rect x="490" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="542" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z"/><path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2"/></svg>
+<text x="555" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">S3 Input</text>
+<text x="555" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">direct upload</text>
+<rect x="650" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#7c4dff" stroke-width="1.5"/>
+<svg x="702" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#b69bff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="715" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#c9b8ff">Image Processor</text>
+<text x="715" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#7c4dff">Lambda · 3 res</text>
+<rect x="820" y="148" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="872" y="159" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linejoin="round" d="M5 4h14l-1.6 16H6.6L5 4Z"/><path stroke="#ff9900" stroke-width="1.4" d="M6.2 9h11.6M6.9 14h10.2"/></svg>
+<text x="885" y="208" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">S3 Output</text>
+<text x="885" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">processed</text>
+<rect x="820" y="20" width="130" height="76" rx="10" fill="#1c1c22" stroke="#2e2e3a" stroke-width="1.5"/>
+<svg x="872" y="31" width="26" height="26" viewBox="0 0 24 24" fill="none"><path stroke="#ff9900" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M6 4h3l9 16h-3M6 20l4.5-8"/></svg>
+<text x="885" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#f2f2f4">Download</text>
+<text x="885" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#55566a">Lambda</text>
+<path d="M140 186 L170 186" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M235 148 Q310 148 395 96" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M460 58 L490 58" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M75 148 Q75 58 490 58" stroke="#555566" stroke-width="1.2" stroke-dasharray="5 4" fill="none" marker-end="url(#a4)"/>
+<path d="M555 96 Q640 148 710 148" stroke="#7c4dff" stroke-width="1.5" fill="none" marker-end="url(#a4p)"/>
+<path d="M780 186 L820 186" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M885 148 L885 96" stroke="#555566" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<path d="M300 168 Q600 10 820 58" stroke="#404050" stroke-width="1.2" stroke-dasharray="5 4" fill="none" marker-end="url(#a4)"/>
+<rect x="486" y="0" width="162" height="16" rx="4" fill="#1a1428"/><text x="490" y="12" font-family="JetBrains Mono,monospace" font-size="9" fill="#7c4dff" letter-spacing="0.5">S3 ObjectCreated EVENT</text>
+<text x="260" y="86" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#6a6a82">pre-signed URL</text>
+<text x="250" y="128" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#4a4a62" font-style="italic">direct upload</text>
+<text x="490" y="282" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#3a3a52">Lambda authorizes · never transfers · S3 handles object storage · Terraform · least-privilege IAM</text>
             </svg>
           </div>
 
